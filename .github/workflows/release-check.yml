@@ -38,14 +38,16 @@ jobs:
           PR_HEAD: ${{ github.event.pull_request.head.sha }}
           PUSH_BEFORE: ${{ github.event.before }}
           PUSH_AFTER: ${{ github.sha }}
-          # PR title/body go through env vars, never inline into the script.
-          PR_TITLE: ${{ github.event.pull_request.title }}
-          PR_BODY: ${{ github.event.pull_request.body }}
           # Optional repo secret: customer/project names, one per line (empty for fork PRs).
           COMPLIANCE_DENYLIST: ${{ secrets.COMPLIANCE_DENYLIST }}
         run: |
           args=()
           if [ "$EVENT" = pull_request ]; then
+            # PR title/body come from the event payload, not from step env: values: those are
+            # echoed into the public job log and would outlive a later edit of the PR text.
+            PR_TITLE="$(jq -r '.pull_request.title // ""' "$GITHUB_EVENT_PATH")"
+            PR_BODY="$(jq -r '.pull_request.body // ""' "$GITHUB_EVENT_PATH")"
+            export PR_TITLE PR_BODY
             args+=(--commits "$PR_BASE..$PR_HEAD" --env-text PR_TITLE --env-text PR_BODY)
           elif [ "$EVENT" = push ] && [ -n "${PUSH_BEFORE//0/}" ] && git cat-file -e "$PUSH_BEFORE^{commit}" 2>/dev/null; then
             args+=(--commits "$PUSH_BEFORE..$PUSH_AFTER")
