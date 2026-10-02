@@ -58,7 +58,7 @@ meldet das fehlende Feld deshalb als (erwartete) Warnung.
 | Skill | Zweck |
 |---|---|
 | [`fortinet-engineer`](skills/fortinet-engineer/) | Senior-Level Fortinet-Engineering über das ganze Portfolio: Solution Architecture, Presales, Implementation, Troubleshooting, Automation, Sizing/Licensing, OT/ICS. Erzwingt Verifikation gegen docs.fortinet.com und explizite Confidence-Tags statt halluzinierter CLI-Befehle, SKUs und Durchsatzzahlen. |
-| [`fortinet-pptx`](skills/fortinet-pptx/) | PowerPoint-Decks auf dem offiziellen Fortinet 16:9-Template im modernen Gradient-House-Style (Gradient-Cards, Icon-Badges, Soft Shadows), Icons von icons.fortinet.com, plus portabler QA-Renderer. |
+| [`fortinet-pptx`](skills/fortinet-pptx/) | PowerPoint-Decks auf dem offiziellen Fortinet 16:9-Template im modernen Gradient-House-Style (Gradient-Cards, Icon-Badges, Soft Shadows), Icons von icons.fortinet.com, plus portabler QA-Renderer. Kundendecks mit Kundenlogo, Discovery-Decks mit Unternehmensrecherche und Pain Points, Varianten mit klarer Empfehlung. |
 | [`fortinet-bom`](skills/fortinet-bom/) | Fortinet Bill of Materials als Excel-Workbook: Engineering-BOM (verifizierte SKUs, Sektionen, Optionsblöcke, Live-Formeln), Kunden-Konfigurator (CAPEX/OPEX/TCO, Szenario-Dropdowns) und SFDC Quote-Lines-Import-CSV. Preise kommen ausschliesslich aus einer offiziellen Fortinet-Preisliste — nie geraten. |
 | [`fortinet-kb-article`](skills/fortinet-kb-article/) | Fortinet Community Knowledge-Base-Artikel im offiziellen KCS-Stil, als editor-fertiges HTML. Erzwingt Verifikation jeder technischen Aussage gegen docs.fortinet.com/community.fortinet.com, den strikten Style Guide (keine Pronomen, keine Überschriften, 'select' statt 'click', RFC-5737-Beispielwerte) und liefert direkt einfügbares HTML aus den Community-Editor-Templates. |
 | [`faz-log-forge`](skills/faz-log-forge/) | Synthetische, FortiOS-native FortiGate-Logs für FortiAnalyzer-Demos/PoCs (Assets, IoT/OT, Traffic, VoIP, Security Events, Security-Rating-Stream), inkl. Verifikations-Script gegen echte FortiOS 7.6/8.0-Logformate. |
@@ -100,6 +100,12 @@ ergänzt die Fortinet-spezifischen Inputs:
 - `scripts/render_slides.py` — rendert Decks zu JPEGs für visuelles QA; findet
   `soffice` auch ausserhalb des PATH und fällt automatisch von `pdftoppm` auf
   PyMuPDF zurück.
+- `references/customer-decks.md` — Regeln für Kundenpräsentationen: Titelfolie immer
+  mit `Vorname Name - Systems Engineer` und bei Kundendecks mit dem Kundenlogo oben
+  rechts; Discovery-Decks mit vorgängiger Web-Recherche zum Unternehmen und
+  Pain Points als Hypothesen (Research-Brief mit Quellen im Chat); Lösungs- und
+  Angebotsdecks mit mehreren Varianten zeigen genau eine empfohlene Option, die
+  übrigen als optional auf einer Seite (`option_cards` / `option_split`).
 
 **Voraussetzungen**: `pip install python-pptx cairosvg` für den Build und die
 Icon-Rasterisierung; für das QA-Rendering LibreOffice (inkl. Impress) sowie

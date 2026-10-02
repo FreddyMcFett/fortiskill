@@ -44,7 +44,9 @@ Five independent skills under `skills/`, each a self-contained folder with
   `references/*.md`).
 - `skills/fortinet-pptx/` — Fortinet-branded PowerPoint decks in the modern
   gradient house style. Has the real Fortinet 16:9 template (`assets/`), a brand
-  spec, the `ftnt_deck.py` / `ftnt_modern.py` helpers embedded in `SKILL.md`, and
+  spec, `references/customer-decks.md` (presenter line, customer logo, discovery
+  research, options with one recommendation), the `ftnt_deck.py` / `ftnt_modern.py`
+  helpers embedded in `SKILL.md`, and
   `scripts/render_slides.py` for visual QA (needs `soffice`; falls back
   `pdftoppm` → PyMuPDF).
 - `skills/fortinet-bom/` — Fortinet BOM/quote Excel workbooks. Has

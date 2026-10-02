@@ -1,6 +1,6 @@
 ---
 name: "fortinet-pptx"
-description: "Build, edit or review Fortinet PowerPoint decks in the modern gradient house style on the official FTNT template, icons from icons.fortinet.com. Use for any Fortinet deck, slides or presentation request."
+description: "Build, edit or review Fortinet PowerPoint decks in the modern gradient house style on the official FTNT template, icons from icons.fortinet.com. Use for any Fortinet deck, slides or presentation request, including customer decks (customer logo on the title slide), discovery call decks (company research and pain points) and solution or offer decks with several options (one recommended option, the others optional)."
 ---
 
 # Fortinet PPTX
@@ -26,11 +26,18 @@ library (ftnt_deck.py). The classic flat style (`FortiDeck` alone, 1 pt borders,
 used only when the user explicitly asks for it. When the user connects a folder with current
 Fortinet corporate decks, render a few of their slides once and compare your output against them.
 
+Three deck types carry extra rules (details in `references/customer-decks.md`): every **customer
+deck** has the customer's logo top right on the title slide, every **discovery deck** starts with
+web research on the company and shows its pain points as hypotheses, and every **solution or offer
+deck with several options** shows one recommended option and marks the others as optional, all on
+one page. On every title slide the presenter line reads `Vorname Name - Systems Engineer`.
+
 ## Before anything else
 
 1. Read `references/brand-spec.md` if it is present (palette, typography, layout list, the red-block
    and grid motif). The values you need most are repeated in this file, so the skill also works
-   when that reference is missing.
+   when that reference is missing. For a customer, discovery or option deck also read
+   `references/customer-decks.md` (logo sourcing, research procedure, pain point and option rules).
 2. The base file for every deck is the bundled template `assets/FTNT_PPT_16x9_Light_Template.pptx`.
    If the asset is missing, look for the FTNT 16x9 light template in the user's connected folders
    or ask for it. Never build a "Fortinet" deck on a blank python-pptx or pptxgenjs presentation.
@@ -66,10 +73,30 @@ Fortinet corporate decks, render a few of their slides once and compare your out
   badge 0.17 in / 0.04 in / 30 %; band 0.22 in / 0.07 in / 25 %; table row labels 0.08 in / 0.02 in /
   18 %). No 3D, bevel, glow, reflection or outer glow.
 - Punctuation: no em dashes, no en dashes as separators, no middle dots. Use commas, colons,
-  slashes, "to" / "bis" for ranges and a spaced hyphen only if nothing else works. English decks use
+  slashes, "to" / "bis" for ranges and a spaced hyphen only if nothing else works (and in the
+  presenter line of the title slide, where it is required). English decks use
   British spelling (analyse, organisation) unless the user asks otherwise; German decks use Swiss
   orthography (ss, never the sharp s), sentence case titles.
 - No customer names unless the user gives them in the request. Examples are generic.
+- Title slide: the subtitle has two lines at most, the topic (optionally with the month) and the
+  presenter line in exactly the form `Vorname Name - Systems Engineer`
+  (`title_slide(title, topic, presenter="Vorname Name")`). Use the presenter's real name as the user
+  gives it, never an invented one; if it is unknown, ask, or keep `Vorname Name` and say so. This
+  spaced hyphen is the required format and the only exception to the punctuation rule above.
+- Customer decks (a customer is named, or the deck is for a customer): the customer's logo sits top
+  right on the title slide (`title_slide(..., logo=path)`, white plate). Only the customer's own logo
+  file, from the user or the customer's official website or press kit, never redrawn, recoloured,
+  cropped or generated. If none can be found, `logo="placeholder"` and say so; `lint` flags it.
+- Discovery decks (discovery call, workshop, first meeting): research the company on the web first
+  (profile, footprint, strategy, security signals, regulation, industry threats; procedure in
+  `references/customer-decks.md`), derive four to six pain points from evidence, show them on a slide
+  as hypotheses to validate, and give the research brief with sources and confidence in the chat
+  reply. Sensitive findings (named incidents, internal problems) never go on a slide.
+- Solution or offer decks with several options: exactly one option is recommended (ask the user when
+  there is no basis to choose), shown with `option_cards` or `option_split` on one page: the
+  recommended option as the raised accent card with the `EMPFOHLEN` / `RECOMMENDED` pill, the others as
+  white cards marked `OPTIONAL`, the band states the recommendation and its reason. Detail slides
+  follow for the recommended option only.
 - Fortinet product claims are verified against docs.fortinet.com (and the ordering guides for
   licensing) before they go on a slide.
 - **No sources in the deck** unless the user explicitly asks for them in the current request: no
@@ -272,6 +299,25 @@ text; grey = underlay and neutral.
     tinted chips, then two note boxes: optional items (yellow tint) and "not included" (white).
 18. Classic compositions still valid with the modern primitives: phase columns, zone or level rows
     with conduit pills, flow maps, rating dots, product icon rows (`icon_row`).
+19. **Customer logo plate** (`title_slide(..., logo=path)` or `customer_logo`): the customer's logo
+    trimmed and fitted into at most 2.4 x 0.68 in on a white rounded plate, right edge on `RIGHT`,
+    top 0.4 in, clear of the red block and the FORTINET wordmark of Title Slide Dark. Only on the title
+    slide. Shapes are named `Customer Logo` and `Customer Logo Plate`.
+20. **Option cards with a recommendation** (`option_cards`): two to four columns. The recommended
+    option is a wider accent gradient card that starts 0.25 in higher, with a white `EMPFOHLEN` pill on
+    its top edge, kicker (`OPTION A`), 15 pt white title, tinted sub line, icon in a white badge and a
+    white inner panel with accent bullets. The other options are white shadowed cards with a grey
+    `OPTIONAL` pill and the kicker beside it, 14 pt title, grey bullets. Facts rows (label left, bold
+    value right) sit at the bottom of every card and line up across the cards. Start the cards at
+    `top + 0.2 in` (room for the pill), height 3.6 to 3.9 in, then the band with the recommendation.
+21. **Recommendation plus optional variants** (`option_split`): the recommended option card on the
+    left (60 %), the optional variants stacked as compact white rows on the right (grey `OPTIONAL`
+    pill, kicker, 12 pt title, one line on what changes compared with the recommendation, icon right).
+    For four or more options or a recommended option with more content.
+22. **Pain point hypotheses** (discovery decks): `icon_tile` 3 x 2, title = pain point, body = the
+    observable signal and the question to validate it; or a chip table "Herausforderung / Was wir
+    sehen / Frage an Sie". A white band (`band(dark=False)`) states that these are hypotheses from
+    public sources, to be validated in the meeting.
 
 ### Storyline conventions
 
@@ -280,6 +326,14 @@ to 6 content slides, a roadmap or PoC plan, next steps (numbered cards), Closing
 Customer decks run 20 to 26 slides; a follow-up 8 to 12. Titles are sentence case and carry the
 message, the subtitle carries the explanation. Each content slide has exactly one message, repeated
 in the band.
+
+Discovery deck (8 to 12 slides, storyline in `references/customer-decks.md`): title with customer
+logo, agenda, goal of the meeting, company snapshot (verified facts as KPI tiles and icon tiles), pain
+point hypotheses, discovery questions, Fortinet in brief mapped to their pain points, next steps.
+
+Solution or offer deck with options: situation and requirements, the options slide (`option_cards`
+or `option_split`, one recommended), then architecture, scope and PoC slides for the recommended
+option only, optionally one "Optionale Varianten" page, next steps.
 
 A proven offer-deck storyline (solution proposal plus PoC): situation (KPI tiles, region panels),
 design principles (gradient header cards), section architecture (overview diagram, hub cards, site
@@ -290,12 +344,16 @@ Gantt, roles with gradient card vs. gradient panel, open points as icon tiles), 
 
 ## Build workflow
 
-1. Clarify what is not given (audience, language, length, scope, which products) with one
-   AskUserQuestion when the user is present; otherwise state the assumptions and build.
+1. Clarify what is not given (audience, language, length, scope, which products, deck type,
+   customer, presenter name, customer logo file, which option to recommend) with one AskUserQuestion
+   when the user is present; otherwise state the assumptions and build.
 2. Collect the content first (the user's folder: BOM, site lists, diagrams; docs.fortinet.com for
-   product facts; ordering guides for licensing). Write a storyline table: slide, layout, pattern,
-   message, icons, source (the source column is for your own verification and the chat reply, it
-   never goes into the deck).
+   product facts; ordering guides for licensing). For a customer deck get the customer logo
+   (user file, else official website or press kit, see `references/customer-decks.md`). For a
+   discovery deck run the company research and write the pain point table (signal, pain point,
+   impact, Fortinet angle, question, confidence) before the storyline. Write a storyline table:
+   slide, layout, pattern, message, icons, source (the source column is for your own verification
+   and the chat reply, it never goes into the deck).
 3. Write `ftnt_deck.py` and `ftnt_modern.py` from the two code blocks below,
    `pip install cairosvg --break-system-packages`, create the icon library through
    `ModernDeck(...).icons`, search and shortlist the icon IDs, render the icon contact sheet and
@@ -303,16 +361,20 @@ Gantt, roles with gradient card vs. gradient panel, open points as icon tiles), 
 4. Write `build_deck.py`: one block per slide using the helpers, `notes()` on every content slide,
    `save()` to the deliverable name. Keep this script; later edits reuse it or, if the user has since
    edited the deck by hand, open their file and patch shapes by name.
-5. QA, all four steps every time: `lint(path)` (title overrides, off-palette colours, non-Arial
-   fonts, em dashes, shapes below the content area, missing notes, source lines and document
-   references on slides or in notes), the pptx skill's `validate.py --original <template>`,
-   `render_slides.py` to JPEGs, and look at every slide (contact sheets of four at 110 dpi). Fix
-   text that spills out of its box or its white panel, lines that run behind boxes, faint icons on
-   gradients, white text on yellow, empty half slides. Re-render and look again. LibreOffice renders
+5. QA, all four steps every time: `lint(path)`, with `customer=True` for customer decks (title
+   overrides, off-palette colours, non-Arial fonts, em dashes, shapes below the content area, missing
+   notes, source lines and document references on slides or in notes, presenter line format, missing
+   or placeholder customer logo, option slides without exactly one recommended option), the pptx
+   skill's `validate.py --original <template>`, `render_slides.py` to JPEGs, and look at every
+   slide (contact sheets of four at 110 dpi). Fix text that spills out of its box or its white
+   panel, lines that run behind boxes, faint icons on gradients, white text on yellow, empty half
+   slides. Re-render and look again. LibreOffice renders
    the gradients and shadows faithfully.
 6. Deliver the .pptx (and write it to the connected folder when there is one), state the caveats
    that also live in the notes, list the sources in the chat reply (not in the deck), and keep the
-   build script and icon cache for the next iteration.
+   build script and icon cache for the next iteration. Discovery decks: the research brief (snapshot,
+   pain point table, sensitive findings, gaps, sources) goes into the same chat reply. Say where the
+   customer logo came from, or that a placeholder is still in the deck.
 
 ### Lessons learned (each one cost a render round)
 
@@ -325,7 +387,8 @@ Gantt, roles with gradient card vs. gradient panel, open points as icon tiles), 
   every vertical line has a free corridor.
 - Yellow gradients and yellow circles carry INK text, never white.
 - Subtitles longer than about 90 characters wrap into the content area; shorten them.
-- Title slide subtitle: two lines at most ("topic" and "name, Fortinet, month year").
+- Title slide subtitle: two lines at most, the topic (optionally ", month year") and
+  `Vorname Name - Systems Engineer`.
 - `from pptx.enum.dml import MSO_LINE_DASH_STYLE` for dashed borders (`shape.line.dash_style`).
 - The icon catalogue has entries with `Tags: null` (handled in `IconLibrary.search`) and IDs with
   spaces (`FortiSASE Cloud`): pass them exactly.
@@ -350,6 +413,11 @@ Gantt, roles with gradient card vs. gradient panel, open points as icon tiles), 
 - "Change content X" after delivery (e.g. a quantity or a design decision such as "no HA at the
   sites"): change it in every slide and in the speaker notes (search the build script and the
   rendered text for all mentions), rebuild, and save the next version file.
+- "Discovery-Präsentation für Kunde X" / "deck for the discovery call with X": research first, then
+  the discovery storyline with logo and pain point hypotheses, research brief in the chat reply.
+- "Lösungs- oder Angebotspräsentation mit Varianten": options slide with one recommendation
+  (`option_cards` or `option_split`), detail slides for the recommended option, the variants on one
+  page.
 - "Add the sources" / "mit Quellen": only then add `footnote()` lines on the slides that carry
   verified product facts or external figures, and run `lint(path, sources_ok=True)`; otherwise the
   deck stays free of sources.
@@ -368,6 +436,12 @@ Gantt, roles with gradient card vs. gradient panel, open points as icon tiles), 
 - One message per slide, stated in the band; notes present; no sources, footnotes or guide
   references on slides or in notes unless asked; no em dashes, no middle dots, no customer names
   unless given, no prices unless asked, British spelling in English and Swiss orthography in German.
+- Title slide: presenter line `Vorname Name - Systems Engineer` with the real name; customer decks
+  show the customer's real, current logo top right, sharp and undistorted, on its plate.
+- Discovery decks: pain points are evidence-based, labelled as hypotheses, free of sensitive findings;
+  company facts carry their year; the research brief with sources is in the chat reply.
+- Option slides: exactly one recommended option, the others marked OPTIONAL, facts rows aligned, the
+  band names the recommendation and why; no prices unless asked.
 - `validate.py --original <template>` passes; the file opens without a repair prompt.
 
 ## Editing a house-style deck the user has changed by hand
@@ -393,7 +467,8 @@ never set a placeholder's width or height (see the title bug above).
 
 ## Helper library, part 1 (write this block to ftnt_deck.py)
 
-The classic primitives, patterns, `IconLibrary` and `lint`. `ModernDeck` in part 2 builds on it.
+The classic primitives, patterns, `IconLibrary`, `logo_png`, the title slide with presenter line and
+customer logo, and `lint`. `ModernDeck` in part 2 builds on it.
 
 ```python
 """ftnt_deck.py - python-pptx helpers for Fortinet house-style decks (see SKILL.md).
@@ -405,6 +480,7 @@ from pptx.util import Emu, Pt
 from pptx.dml.color import RGBColor
 from pptx.enum.shapes import MSO_SHAPE, MSO_CONNECTOR
 from pptx.enum.text import PP_ALIGN, MSO_ANCHOR, MSO_AUTO_SIZE
+from pptx.enum.dml import MSO_LINE_DASH_STYLE
 from pptx.oxml.ns import qn
 from lxml import etree
 
@@ -534,6 +610,31 @@ class IconLibrary:
         return out
 
 
+def logo_png(path, cache_dir, px=1600):
+    """Customer logo as a trimmed PNG: SVG rasterised with cairosvg, transparent or white margins cut
+    off so the logo fills its box. Returns (png_path, (width, height)); warns when it is too small."""
+    from PIL import Image, ImageChops
+    os.makedirs(cache_dir, exist_ok=True)
+    out = os.path.join(cache_dir, "logo-" + os.path.splitext(os.path.basename(path))[0] + ".png")
+    if path.lower().endswith(".svg"):
+        import cairosvg
+        cairosvg.svg2png(url=path, write_to=out, output_width=px)
+        im = Image.open(out)
+    else:
+        im = Image.open(path)
+    im = im.convert("RGBA")
+    if im.getchannel("A").getextrema()[0] < 255:              # transparent background
+        box = im.getchannel("A").point(lambda a: 255 if a > 8 else 0).getbbox()
+    else:                                                     # opaque: cut the white margin
+        diff = ImageChops.difference(im.convert("RGB"), Image.new("RGB", im.size, (255, 255, 255)))
+        box = diff.convert("L").point(lambda v: 255 if v > 12 else 0).getbbox()
+    im = im.crop(box) if box else im
+    if im.width < 400:
+        print(f"WARN logo {os.path.basename(path)}: only {im.width} px wide, look for an SVG or a larger PNG")
+    im.save(out)
+    return out, im.size
+
+
 class FortiDeck:
     def __init__(self, template_path, icon_cache="icon_cache"):
         self.prs = Presentation(template_path)
@@ -554,10 +655,41 @@ class FortiDeck:
         return path
 
     # slide types: placeholders only, never move or resize a title
-    def title_slide(self, title, subtitle="", dark=True):
+    def title_slide(self, title, subtitle="", dark=True, presenter=None, role="Systems Engineer", logo=None):
+        """subtitle: the topic line. presenter adds the line 'Vorname Name - Systems Engineer'.
+        logo: the customer's logo file for customer decks ('placeholder' for a dashed frame)."""
+        if presenter:
+            subtitle = "\n".join(t for t in (subtitle, f"{presenter} - {role}") if t)
         s = self.prs.slides.add_slide(self.layout("Title Slide Dark" if dark else "Title Slide"))
         s.shapes.title.text, s.placeholders[1].text = title, subtitle
+        if logo:
+            self.customer_logo(s, logo)
         return s
+
+    def customer_logo(self, slide, path, plate=True, right=RIGHT, top=365760, max_w=2194560, max_h=621792,
+                      pad=128016):
+        """Customer logo top right on the title slide of every customer deck. path: the customer's own
+        logo file (svg, png, jpg). plate=True sets it on a white rounded plate, which keeps any logo
+        legible on the dark title slide; plate=False only for a white (negative) logo version. path None
+        or 'placeholder' leaves a dashed frame that lint() reports until a real logo replaces it."""
+        if path in (None, "placeholder"):
+            sh = FortiDeck.rounded(self, slide, right - max_w - 2 * pad, top, max_w + 2 * pad, max_h + 2 * pad,
+                                   WHITE, MUTED, R_TILE)
+            sh.line.dash_style = MSO_LINE_DASH_STYLE.DASH
+            self.shape_text(sh, "KUNDENLOGO", size=9, color=MUTED)
+            sh.name = "Customer Logo Placeholder"
+            return sh
+        png, (pw, ph) = logo_png(path, self.icons.dir)
+        k = min(max_w / pw, max_h / ph)
+        w, h = int(pw * k), int(ph * k)
+        p = pad if plate else 0
+        if plate:
+            self.rounded(slide, right - w - 2 * p, top, w + 2 * p, h + 2 * p, WHITE, None, R_TILE).name = \
+                "Customer Logo Plate"
+        pic = slide.shapes.add_picture(png, Emu(right - w - p), Emu(top + p), Emu(w), Emu(h))
+        pic.name = "Customer Logo"
+        pic._element.find(qn("p:nvPicPr")).find(qn("p:cNvPr")).set("descr", "Customer logo")
+        return pic
 
     def section(self, title, subtitle="", variant=1):
         s = self.prs.slides.add_slide(self.layout(f"Section Header {variant}"))
@@ -855,15 +987,31 @@ class FortiDeck:
         self.text(slide, x, FOOTNOTE_Y, w, 201168, text, size=7.5, color=MUTED, insets=(0, 0))
 
 
+PRESENTER_RE = re.compile(r"^\S[^\n]* - [A-Za-z ]*Systems Engineer$")
 SOURCE_RE = re.compile(r"(\b(Quelle|Quellen|Source|Sources)\s*:|docs\.fortinet\.com|https?://|Ordering Guide|"
                        r"Deployment Guide|Administration Guide|Reference Guide|FSS-OG-)", re.I)
 
 
-def lint(pptx_path, sources_ok=False):
+def lint(pptx_path, sources_ok=False, customer=False):
     """House-rule checks. Prints and returns a list of warnings; run before rendering.
-    sources_ok=True only when the user explicitly asked for sources in the deck."""
+    sources_ok=True only when the user explicitly asked for sources in the deck; customer=True for
+    every customer deck (the title slide must carry the customer logo)."""
     p, out = Presentation(pptx_path), []
     for i, s in enumerate(p.slides, 1):
+        names = [sh.name for sh in s.shapes]
+        if s.slide_layout.name.startswith("Title Slide"):
+            lines = [t.strip() for t in s.placeholders[1].text_frame.text.splitlines() if t.strip()] \
+                if 1 in [ph.placeholder_format.idx for ph in s.placeholders] else []
+            if not lines or not PRESENTER_RE.match(lines[-1]):
+                out.append(f"slide {i}: title slide needs the presenter line 'Vorname Name - Systems Engineer'")
+            elif lines[-1].startswith("Vorname Name"):
+                out.append(f"slide {i}: presenter line still has the placeholder name")
+        if "Customer Logo Placeholder" in names:
+            out.append(f"slide {i}: customer logo placeholder still in the deck, insert the real logo")
+        elif customer and i == 1 and "Customer Logo" not in names:
+            out.append("slide 1: customer deck without the customer logo top right on the title slide")
+        if "Option Optional" in names and names.count("Option Recommended") != 1:
+            out.append(f"slide {i}: option slide needs exactly one recommended option")
         for sh in s.shapes:
             if sh.is_placeholder and sh.placeholder_format.type is not None and "TITLE" in str(sh.placeholder_format.type):
                 if sh._element.find(qn("p:spPr")).find(qn("a:xfrm")) is not None:
@@ -899,7 +1047,8 @@ def lint(pptx_path, sources_ok=False):
 
 The modern layer: `grad`, `shadow`, `DARK`, `LIGHT_END` and `ModernDeck` (gradient `rounded`,
 `header_card` with badge and inner panel, `badge`, `wbadge`, `gbox`, dark pill `band`, blue table
-headers, gradient chevrons and tracker). Always build with `ModernDeck`.
+headers, gradient chevrons and tracker, `option_cards` and `option_split` for options with a
+recommendation). Always build with `ModernDeck`.
 
 ```python
 """ftnt_modern.py - modern variant of the Fortinet house style.
@@ -1179,9 +1328,113 @@ class ModernDeck(FortiDeck):
         self.text(slide, tx, y + 45720, x + w - tx - 45720, 566928 if tall else h - 91440,
                   [[(t1, {"size": 10.5, "bold": True, "color": INK if dark_text else WHITE})],
                    [(t2, {"size": 8.5, "color": BODY_GREY if dark_text else TINT.get(color, WHITE)})]], anchor="ctr")
+
+    # ---------------------------------------------------------------- options with a recommendation
+    def _facts(self, slide, x, y, w, facts):
+        """Comparison rows at the bottom of an option card: label left, bold value right."""
+        rh = 246888
+        for k, (lab, val) in enumerate(facts):
+            yy = y + k * rh
+            if k:
+                self.line(slide, x, yy, x + w, yy, BORDER, w=6350)
+            self.text(slide, x, yy, w // 2, rh, lab, size=9, color=BODY_GREY, anchor="ctr", insets=(0, 0))
+            self.text(slide, x + w // 2, yy, w - w // 2, rh, val, size=9.5, bold=True, align="r", anchor="ctr",
+                      insets=(0, 0))
+
+    def _option_card(self, slide, x, y, w, h, o, rec, color, label, bullet_size=10.5):
+        """rec=True: accent gradient card, label pill on the top edge, white inner panel, accent bullets.
+        rec=False: white shadowed card, grey OPTIONAL pill with the kicker beside it, grey bullets."""
+        facts = o.get("facts") or []
+        if rec:
+            card = self.rounded(slide, x, y, w, h, color, None, self.CARD_R, shade=True)
+            pw = 1463040
+            pill = super().rounded(slide, x + (w - pw) // 2, y - 137160, pw, 274320, WHITE, None, 137160)
+            shadow(pill, blur=152400, dist=38100, alpha=30000)
+            self.shape_text(pill, label, size=8.5, color=ON_LIGHT.get(color, color), insets=(0, 0))
+            tcol, scol = (INK, INK) if color == YELLOW else (WHITE, TINT[color])
+            ty = y + 228600
+        else:
+            card = self.rounded(slide, x, y, w, h, WHITE, None, self.CARD_R, shade=True)
+            self.pill(slide, x + 164592, y + 146304, 868680, 219456, label, GREY)
+            if o.get("kicker"):
+                self.text(slide, x + 1124712, y + 146304, w - 1289304, 219456, o["kicker"], size=8.5, bold=True,
+                          color=GREY, anchor="ctr", insets=(0, 0))
+            tcol, scol = BLACK, BODY_GREY
+            ty = y + 475488
+        card.name = "Option Recommended" if rec else "Option Optional"
+        tx, tw = x + 164592, w - 329184
+        if o.get("icon"):
+            isz = 502920
+            if rec:
+                self.wbadge(slide, tx, ty + 54864, isz, o["icon"])
+            else:
+                self.icon(slide, o["icon"], tx, ty + 54864, isz)
+            tx, tw = tx + isz + 109728, tw - isz - 109728
+        paras = []
+        if rec and o.get("kicker"):
+            paras.append([(o["kicker"], {"size": 8.5, "bold": True, "color": scol})])
+        paras.append([(o["title"], {"size": 15 if rec else 14, "bold": True, "color": tcol})])
+        if o.get("sub"):
+            paras.append([(o["sub"], {"size": 10, "color": scol})])
+        self.text(slide, tx, ty, tw, 868680, paras, insets=(0, 0), spacing=1)
+        by, pad = ty + (868680 if rec else 731520), 109728
+        if rec:
+            self.rounded(slide, x + pad, by, w - 2 * pad, y + h - pad - by, WHITE, None, R_TILE, shade=False)
+            bx, bw, bc = x + pad + 118872, w - 2 * pad - 237744, DARK[YELLOW] if color == YELLOW else color
+            bottom = y + h - pad - 91440
+        else:
+            self.line(slide, x + 164592, by, x + w - 164592, by, BORDER, w=9525)
+            bx, bw, bc = x + 164592, w - 329184, GREY
+            bottom = y + h - 137160
+        if facts:
+            fy = bottom - len(facts) * 246888
+            self.line(slide, bx, fy - 54864, bx + bw, fy - 54864, BORDER, w=9525)
+            self._facts(slide, bx, fy, bw, facts)
+            bottom = fy - 109728
+        if o.get("bullets"):
+            self.text(slide, bx, by + 91440, bw, bottom - by - 91440, o["bullets"], size=bullet_size,
+                      color=BLACK if rec else BODY_GREY, bullets=bc, spacing=4)
+
+    def option_cards(self, slide, y, h, options, recommended=0, color=RED, labels=("EMPFOHLEN", "OPTIONAL"),
+                     lift=228600, x0=LEFT, width=CONTENT_W, bullet_size=10.5):
+        """Two to four solution or offer options on one slide, exactly one recommended.
+        options: [dict(kicker="OPTION A", title=..., sub=..., bullets=[...], icon=ID, facts=[(label, value)])],
+        the same fact labels in the same order for every option. The recommended option (index) is a wider
+        accent gradient card from y with a label pill on its top edge; the others are white cards marked
+        OPTIONAL starting lift lower; all end at y + h. English decks: labels=("RECOMMENDED", "OPTIONAL")."""
+        cx = cols(len(options), x0=x0, width=width,
+                  weights=[1.12 if i == recommended else 1 for i in range(len(options))])
+        for i, (o, (x, w)) in enumerate(zip(options, cx)):
+            rec = i == recommended
+            self._option_card(slide, x, y if rec else y + lift, w, h if rec else h - lift, o, rec, color,
+                              labels[0] if rec else labels[1], bullet_size)
+        return cx
+
+    def option_split(self, slide, y, h, recommended, others, color=RED, labels=("EMPFOHLEN", "OPTIONAL"),
+                     split=0.6, x0=LEFT, width=CONTENT_W):
+        """Recommended option as a large card on the left, the optional variants stacked as compact white
+        rows on the right. recommended: an option dict as in option_cards; others: [dict(kicker, title,
+        body, icon)], body = what changes compared with the recommendation, one line."""
+        lw = int((width - GAP) * split)
+        self._option_card(slide, x0, y, lw, h, recommended, True, color, labels[0])
+        rx, rw = x0 + lw + GAP, width - lw - GAP
+        for (ry, rh), o in zip(rows(len(others), y + 137160, h - 137160, gap=137160), others):
+            self.rounded(slide, rx, ry, rw, rh, WHITE, None, R_TILE, shade=True).name = "Option Optional"
+            self.pill(slide, rx + 137160, ry + 109728, 868680, 219456, labels[1], GREY)
+            tx, tw = rx + 137160, rw - 274320
+            if o.get("icon"):
+                isz = min(502920, rh - 182880)
+                self.icon(slide, o["icon"], rx + rw - isz - 137160, ry + (rh - isz) // 2, isz)
+                tw -= isz + 91440
+            if o.get("kicker"):
+                self.text(slide, tx + 932688, ry + 109728, tw - 932688, 219456, o["kicker"], size=8.5, bold=True,
+                          color=GREY, anchor="ctr", insets=(0, 0))
+            self.text(slide, tx, ry + 383540, tw, rh - 438912,
+                      [[(o["title"], {"size": 12, "bold": True})], [(o.get("body", ""), {"size": 9.5, "color": BODY_GREY})]],
+                      insets=(0, 0), spacing=2)
 ```
 
-### Worked example (tested: renders cleanly, `lint` returns no warnings, `validate.py` passes)
+### Worked example (tested: renders cleanly, `lint` reports only the `Vorname Name` placeholder, `validate.py` passes)
 
 ```python
 from ftnt_modern import *
@@ -1189,8 +1442,29 @@ d = ModernDeck("<skill dir>/assets/FTNT_PPT_16x9_Light_Template.pptx", icon_cach
 I = lambda v: int(v * 914400)
 STEPS = ["Criteria", "Build", "Test", "Review"]
 
-d.title_slide("Secure SD-WAN and SASE", "Solution proposal and PoC approach\nName, Systems Engineer, Month Year")
-d.agenda(["Starting point", "Target architecture", "PoC approach", "Next steps"])
+d.title_slide("Secure SD-WAN and SASE", "Solution proposal and PoC approach, Month Year",
+              presenter="Vorname Name", logo="customer-logo.svg")   # real name; the customer's own logo file
+d.agenda(["Starting point", "Options", "Target architecture", "PoC approach", "Next steps"])
+
+# 0 options with one recommendation, all on one page
+s, top = d.content("Three options, one recommendation")
+d.option_cards(s, top + I(0.2), I(3.85), [
+    dict(kicker="OPTION A", title="SD-WAN with cloud hubs", sub="Hubs in Azure, close to the workloads",
+         icon="Secure-SD-WAN", bullets=["FortiGate at every site, zero touch", "Two FortiGate-VM per hub",
+                                        "FortiManager and FortiAnalyzer"],
+         facts=[("Sites", "20"), ("Operations", "In-house"), ("Effort", "Medium")]),
+    dict(kicker="OPTION B", title="SD-WAN with DC hubs", sub="Hubs in the own data centre", icon="Data-Center",
+         bullets=["Hub appliances in the data centre", "No Azure vWAN needed"],
+         facts=[("Sites", "20"), ("Operations", "In-house"), ("Effort", "Low")]),
+    dict(kicker="OPTION C", title="Managed SD-WAN", sub="Operated by a partner", icon="Partnerships",
+         bullets=["Same design as option A", "Operations and monitoring by the partner"],
+         facts=[("Sites", "20"), ("Operations", "Partner"), ("Effort", "Low")])],
+    recommended=0, labels=("RECOMMENDED", "OPTIONAL"))
+d.band(s, top + I(4.3), [[("Recommendation option A: ", {"bold": True, "color": ON_DARK[RED]}),
+                         ("one design, hubs next to the workloads.", {"bold": True})]], h=I(0.62))
+d.notes(s, "Option A is recommended because most workloads already run in Azure. Option B is cheaper to "
+           "operate if the data centre stays; option C fits if no in-house team is planned.")
+
 d.section("Target architecture", "SD-WAN hubs in the cloud, SASE for remote users", variant=2)
 
 # 1 gradient header cards with icon badges and white inner panels
@@ -1245,5 +1519,5 @@ d.band(s, top + I(4.3), [[("Fortinet supports the PoC actively.", {"bold": True}
 d.notes(s, "PoC tracks.")
 d.closing()
 d.save("example.pptx")
-print(lint("example.pptx"))
+print(lint("example.pptx", customer=True))   # flags the 'Vorname Name' placeholder until the real name is set
 ```
