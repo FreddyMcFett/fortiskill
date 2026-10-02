@@ -1,0 +1,1001 @@
+{
+  "_provenance": {
+    "devtype": "Two tiers. tier=\"verified\" values were observed in live FortiOS 7.6.6/8.0.0 traffic logs. tier=\"extended\" values follow Fortinet's published FortiNAC-F device-type taxonomy (docs.fortinet.com/document/fortinac-f/7.6.0/administration-guide/82898/device-types), which FortiNAC-F 7.6.3+ derives from FortiGuard category/subcategory mappings. Extended strings render correctly in FortiAnalyzer (FAZ stores devtype as an opaque string) but were NOT confirmed as FortiOS-emitted strings. Use --devtype-mode verified to restrict output to tier 1.",
+    "osname/srcfamily/srchwversion/srcswversion": "Shapes follow the live-log convention: osname = OS product name, srcfamily = product family, srchwversion = hardware model, srcswversion = firmware/OS version string.",
+    "vendor": "Key into data/oui.json. MAC prefixes there are real IEEE OUI assignments."
+  },
+  "models": {
+    "cam_axis": {
+      "devtype": "IP Camera",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Linux",
+      "srcfamily": "Camera",
+      "vendor": "Axis Communications AB",
+      "srchwversion": "P3245-LVE",
+      "srcswversion": "11.11.61",
+      "purdue": 3,
+      "role": "camera",
+      "behaviours": [
+        "ntp",
+        "dns",
+        "vendor-cloud",
+        "rtsp-nvr",
+        "onvif-discovery",
+        "firmware-update"
+      ]
+    },
+    "cam_hikvision": {
+      "devtype": "IP Camera",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Linux",
+      "srcfamily": "Camera",
+      "vendor": "Hangzhou Hikvision",
+      "srchwversion": "DS-2CD2386G2",
+      "srcswversion": "5.7.15",
+      "purdue": 3,
+      "role": "camera",
+      "behaviours": [
+        "ntp",
+        "dns",
+        "vendor-cloud",
+        "rtsp-nvr",
+        "onvif-discovery"
+      ]
+    },
+    "cam_dahua": {
+      "devtype": "IP Camera",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Linux",
+      "srcfamily": "Camera",
+      "vendor": "Zhejiang Dahua Technology",
+      "srchwversion": "IPC-HDBW3841E",
+      "srcswversion": "2.840.0000",
+      "purdue": 3,
+      "role": "camera",
+      "behaviours": [
+        "ntp",
+        "dns",
+        "vendor-cloud",
+        "rtsp-nvr"
+      ]
+    },
+    "cam_reolink": {
+      "devtype": "IP Camera",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Linux",
+      "srcfamily": "Camera",
+      "vendor": "Reolink",
+      "srchwversion": "RLC-811A",
+      "srcswversion": "3.1.0.951",
+      "purdue": 3,
+      "role": "camera",
+      "behaviours": [
+        "ntp",
+        "dns",
+        "vendor-cloud",
+        "rtsp-nvr"
+      ]
+    },
+    "phone_yealink": {
+      "devtype": "IP Phone",
+      "tier": "extended",
+      "fallback_devtype": "Phone",
+      "osname": "Linux",
+      "srcfamily": "VoIP Phone",
+      "vendor": "YEALINK",
+      "srchwversion": "T54W",
+      "srcswversion": "96.86.0.85",
+      "purdue": 4,
+      "role": "voip",
+      "behaviours": [
+        "ntp",
+        "dns",
+        "sip-registrar",
+        "provisioning",
+        "firmware-update"
+      ]
+    },
+    "phone_polycom": {
+      "devtype": "IP Phone",
+      "tier": "extended",
+      "fallback_devtype": "Phone",
+      "osname": "Linux",
+      "srcfamily": "VoIP Phone",
+      "vendor": "Polycom",
+      "srchwversion": "VVX 450",
+      "srcswversion": "6.4.6.0812",
+      "purdue": 4,
+      "role": "voip",
+      "behaviours": [
+        "ntp",
+        "dns",
+        "sip-registrar",
+        "provisioning"
+      ]
+    },
+    "phone_snom": {
+      "devtype": "IP Phone",
+      "tier": "extended",
+      "fallback_devtype": "Phone",
+      "osname": "Linux",
+      "srcfamily": "VoIP Phone",
+      "vendor": "snom technology GmbH",
+      "srchwversion": "D785",
+      "srcswversion": "10.1.155.10",
+      "purdue": 4,
+      "role": "voip",
+      "behaviours": [
+        "ntp",
+        "dns",
+        "sip-registrar"
+      ]
+    },
+    "printer_hp": {
+      "devtype": "Printer",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "FutureSmart",
+      "srcfamily": "Printer",
+      "vendor": "Hewlett Packard",
+      "srchwversion": "LaserJet M528",
+      "srcswversion": "5.9.0.3",
+      "purdue": 4,
+      "role": "printer",
+      "behaviours": [
+        "ntp",
+        "dns",
+        "vendor-cloud",
+        "print-spool",
+        "snmp"
+      ]
+    },
+    "printer_brother": {
+      "devtype": "Printer",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Linux",
+      "srcfamily": "Printer",
+      "vendor": "Brother industries",
+      "srchwversion": "MFC-L8390CDW",
+      "srcswversion": "ZC2402032150",
+      "purdue": 4,
+      "role": "printer",
+      "behaviours": [
+        "ntp",
+        "dns",
+        "vendor-cloud",
+        "print-spool"
+      ]
+    },
+    "printer_canon": {
+      "devtype": "Printer",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Linux",
+      "srcfamily": "Printer",
+      "vendor": "CANON INC.",
+      "srchwversion": "imageRUNNER C3226i",
+      "srcswversion": "12.05",
+      "purdue": 4,
+      "role": "printer",
+      "behaviours": [
+        "ntp",
+        "dns",
+        "print-spool",
+        "snmp"
+      ]
+    },
+    "scanner_zebra": {
+      "devtype": "Barcode Scanner",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Android",
+      "srcfamily": "Handheld",
+      "vendor": "Zebra Technologies",
+      "srchwversion": "TC58",
+      "srcswversion": "13.0",
+      "purdue": 3,
+      "role": "handheld",
+      "behaviours": [
+        "ntp",
+        "dns",
+        "wms-backend",
+        "vendor-cloud"
+      ]
+    },
+    "plc_siemens": {
+      "devtype": "Programmable Logic Controller",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "SIMATIC",
+      "srcfamily": "PLC",
+      "vendor": "Siemens AG",
+      "srchwversion": "S7-1518-4 PN/DP",
+      "srcswversion": "V3.1.4",
+      "purdue": 1,
+      "role": "plc",
+      "behaviours": [
+        "s7comm",
+        "ot-ntp",
+        "profinet-peer",
+        "hmi-poll"
+      ]
+    },
+    "plc_rockwell": {
+      "devtype": "Programmable Logic Controller",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Logix",
+      "srcfamily": "PLC",
+      "vendor": "Rockwell Automation",
+      "srchwversion": "1756-L85E",
+      "srcswversion": "33.011",
+      "purdue": 1,
+      "role": "plc",
+      "behaviours": [
+        "enip",
+        "ot-ntp",
+        "hmi-poll"
+      ]
+    },
+    "plc_schneider": {
+      "devtype": "Programmable Logic Controller",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "EcoStruxure",
+      "srcfamily": "PLC",
+      "vendor": "Schneider Electric",
+      "srchwversion": "M580 BMEP584040",
+      "srcswversion": "SV3.20",
+      "purdue": 1,
+      "role": "plc",
+      "behaviours": [
+        "modbus",
+        "ot-ntp",
+        "hmi-poll"
+      ]
+    },
+    "plc_beckhoff": {
+      "devtype": "Programmable Logic Controller",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "TwinCAT",
+      "srcfamily": "PLC",
+      "vendor": "Beckhoff Automation",
+      "srchwversion": "CX5140",
+      "srcswversion": "3.1.4024.53",
+      "purdue": 1,
+      "role": "plc",
+      "behaviours": [
+        "modbus",
+        "ot-ntp",
+        "hmi-poll"
+      ]
+    },
+    "plc_wago": {
+      "devtype": "Programmable Logic Controller",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Linux",
+      "srcfamily": "PLC",
+      "vendor": "WAGO Kontakttechnik",
+      "srchwversion": "PFC200 750-8212",
+      "srcswversion": "04.03.10",
+      "purdue": 1,
+      "role": "plc",
+      "behaviours": [
+        "modbus",
+        "ot-ntp"
+      ]
+    },
+    "rtu_phoenix": {
+      "devtype": "Industrial Device",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Linux",
+      "srcfamily": "RTU",
+      "vendor": "PHOENIX CONTACT",
+      "srchwversion": "AXC F 2152",
+      "srcswversion": "2023.0.5",
+      "purdue": 1,
+      "role": "rtu",
+      "behaviours": [
+        "modbus",
+        "ot-ntp"
+      ]
+    },
+    "hmi_siemens": {
+      "devtype": "Human Machine Interface",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Windows",
+      "srcfamily": "HMI",
+      "vendor": "Siemens AG",
+      "srchwversion": "TP1500 Comfort",
+      "srcswversion": "16.0.0.0",
+      "purdue": 2,
+      "role": "hmi",
+      "behaviours": [
+        "s7comm",
+        "hmi-poll",
+        "ot-ntp",
+        "historian-write",
+        "ping"
+      ]
+    },
+    "gw_moxa": {
+      "devtype": "Industrial Device",
+      "tier": "extended",
+      "fallback_devtype": "Network Generic",
+      "osname": "Linux",
+      "srcfamily": "Serial Gateway",
+      "vendor": "MOXA",
+      "srchwversion": "NPort 5650-16",
+      "srcswversion": "3.11",
+      "purdue": 2,
+      "role": "gateway",
+      "behaviours": [
+        "modbus",
+        "dnp3-realport",
+        "ot-ntp",
+        "ping"
+      ]
+    },
+    "sw_hirschmann": {
+      "devtype": "Switch",
+      "tier": "verified",
+      "osname": "HiOS",
+      "srcfamily": "Industrial Switch",
+      "vendor": "Hirschmann Automation",
+      "srchwversion": "RSPE35",
+      "srcswversion": "09.4.02",
+      "purdue": 2,
+      "role": "otswitch",
+      "behaviours": [
+        "snmp",
+        "ot-ntp",
+        "syslog-out",
+        "ping"
+      ]
+    },
+    "drive_abb": {
+      "devtype": "Industrial Device",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Embedded",
+      "srcfamily": "VFD",
+      "vendor": "ABB",
+      "srchwversion": "ACS880",
+      "srcswversion": "2.90.0",
+      "purdue": 1,
+      "role": "drive",
+      "behaviours": [
+        "modbus",
+        "ot-ntp"
+      ]
+    },
+    "robot_kuka": {
+      "devtype": "Industrial Device",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Windows",
+      "srcfamily": "Robot Controller",
+      "vendor": "KUKA",
+      "srchwversion": "KR C4",
+      "srcswversion": "8.6.7",
+      "purdue": 1,
+      "role": "robot",
+      "behaviours": [
+        "profinet-peer",
+        "ot-ntp",
+        "hmi-poll"
+      ]
+    },
+    "sensor_sick": {
+      "devtype": "Industrial Device",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Embedded",
+      "srcfamily": "Sensor",
+      "vendor": "SICK AG",
+      "srchwversion": "microScan3",
+      "srcswversion": "2.4.0",
+      "purdue": 1,
+      "role": "sensor",
+      "behaviours": [
+        "enip",
+        "ot-ntp"
+      ]
+    },
+    "scale_mettler": {
+      "devtype": "Industrial Device",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Embedded",
+      "srcfamily": "Scale",
+      "vendor": "METTLER-TOLEDO",
+      "srchwversion": "IND780",
+      "srcswversion": "7.3.06",
+      "purdue": 2,
+      "role": "sensor",
+      "behaviours": [
+        "modbus",
+        "ot-ntp",
+        "historian-write"
+      ]
+    },
+    "bms_siemens": {
+      "devtype": "HVAC",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Embedded",
+      "srcfamily": "Building Controller",
+      "vendor": "Siemens AG",
+      "srchwversion": "PXC4.E16",
+      "srcswversion": "V6.20",
+      "purdue": 2,
+      "role": "bms",
+      "behaviours": [
+        "bacnet",
+        "ot-ntp",
+        "bms-cloud",
+        "ping"
+      ]
+    },
+    "bms_belimo": {
+      "devtype": "HVAC",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Embedded",
+      "srcfamily": "Actuator",
+      "vendor": "BELIMO Automation AG",
+      "srchwversion": "Energy Valve 3",
+      "srcswversion": "7.2.1",
+      "purdue": 1,
+      "role": "bms",
+      "behaviours": [
+        "bacnet",
+        "bms-cloud"
+      ]
+    },
+    "bms_sauter": {
+      "devtype": "HVAC",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Embedded",
+      "srcfamily": "Building Controller",
+      "vendor": "Fr. Sauter AG",
+      "srchwversion": "modu525",
+      "srcswversion": "3.4.1",
+      "purdue": 2,
+      "role": "bms",
+      "behaviours": [
+        "bacnet",
+        "ot-ntp"
+      ]
+    },
+    "hvac_carrier": {
+      "devtype": "HVAC",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Embedded",
+      "srcfamily": "Chiller",
+      "vendor": "Carrier Corporation",
+      "srchwversion": "30XA",
+      "srcswversion": "5.2",
+      "purdue": 1,
+      "role": "bms",
+      "behaviours": [
+        "bacnet",
+        "modbus"
+      ]
+    },
+    "heat_viessmann": {
+      "devtype": "HVAC",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Embedded",
+      "srcfamily": "Heating",
+      "vendor": "Viessmann Elektronik",
+      "srchwversion": "Vitoconnect 100",
+      "srcswversion": "3.1.4",
+      "purdue": 2,
+      "role": "bms",
+      "behaviours": [
+        "bms-cloud",
+        "ntp",
+        "dns"
+      ]
+    },
+    "access_honeywell": {
+      "devtype": "Access Control",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Embedded",
+      "srcfamily": "Access Controller",
+      "vendor": "Honeywell",
+      "srchwversion": "PRO32IC",
+      "srcswversion": "1.09.32",
+      "purdue": 3,
+      "role": "access",
+      "behaviours": [
+        "access-backend",
+        "ntp",
+        "dns"
+      ]
+    },
+    "elev_schindler": {
+      "devtype": "Industrial Device",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Embedded",
+      "srcfamily": "Elevator Controller",
+      "vendor": "Schindler",
+      "srchwversion": "PORT 4D",
+      "srcswversion": "2.8",
+      "purdue": 2,
+      "role": "elevator",
+      "behaviours": [
+        "bms-cloud",
+        "ntp"
+      ]
+    },
+    "light_signify": {
+      "devtype": "Smart Lighting",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Embedded",
+      "srcfamily": "Lighting Bridge",
+      "vendor": "Signify B.V.",
+      "srchwversion": "Interact Pro Gateway",
+      "srcswversion": "2.4.9",
+      "purdue": 3,
+      "role": "lighting",
+      "behaviours": [
+        "vendor-cloud",
+        "ntp",
+        "dns"
+      ]
+    },
+    "meter_sma": {
+      "devtype": "Industrial Device",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Embedded",
+      "srcfamily": "PV Inverter",
+      "vendor": "SMA Solar Technology AG",
+      "srchwversion": "Sunny Tripower 25000TL",
+      "srcswversion": "3.10.13.R",
+      "purdue": 1,
+      "role": "energy",
+      "behaviours": [
+        "modbus",
+        "vendor-cloud",
+        "ntp"
+      ]
+    },
+    "ev_tesla": {
+      "devtype": "Industrial Device",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Embedded",
+      "srcfamily": "EV Charger",
+      "vendor": "Tesla,Inc.",
+      "srchwversion": "Wall Connector Gen3",
+      "srcswversion": "24.36.2",
+      "purdue": 3,
+      "role": "evcharger",
+      "behaviours": [
+        "ocpp",
+        "vendor-cloud",
+        "ntp",
+        "dns"
+      ]
+    },
+    "med_draeger": {
+      "devtype": "Medical Device",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Embedded",
+      "srcfamily": "Patient Monitor",
+      "vendor": "Draegerwerk",
+      "srchwversion": "Infinity M540",
+      "srcswversion": "VG7.0",
+      "purdue": 3,
+      "role": "medical",
+      "behaviours": [
+        "hl7",
+        "ntp",
+        "medical-backend"
+      ]
+    },
+    "med_ge": {
+      "devtype": "Medical Device",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Windows",
+      "srcfamily": "Imaging",
+      "vendor": "GE Healthcare",
+      "srchwversion": "Revolution ACT",
+      "srcswversion": "3.2",
+      "purdue": 3,
+      "role": "medical",
+      "behaviours": [
+        "dicom",
+        "ntp",
+        "medical-backend"
+      ]
+    },
+    "med_bbraun": {
+      "devtype": "Medical Device",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Embedded",
+      "srcfamily": "Infusion Pump",
+      "vendor": "B. Braun",
+      "srchwversion": "Infusomat Space",
+      "srcswversion": "688N",
+      "purdue": 3,
+      "role": "medical",
+      "behaviours": [
+        "medical-backend",
+        "ntp"
+      ]
+    },
+    "med_roche": {
+      "devtype": "Medical Device",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Windows",
+      "srcfamily": "Lab Analyzer",
+      "vendor": "Roche Diagnostics",
+      "srchwversion": "cobas pro",
+      "srcswversion": "02-06",
+      "purdue": 3,
+      "role": "medical",
+      "behaviours": [
+        "hl7",
+        "medical-backend",
+        "ntp"
+      ]
+    },
+    "tv_lg": {
+      "devtype": "Television",
+      "tier": "verified",
+      "osname": "webOS",
+      "srcfamily": "TV",
+      "vendor": "LG Electronics",
+      "srchwversion": "OLED65C3",
+      "srcswversion": "03.30.55",
+      "purdue": 4,
+      "role": "consumer",
+      "behaviours": [
+        "vendor-cloud",
+        "streaming",
+        "dns",
+        "ntp"
+      ]
+    },
+    "tv_samsung": {
+      "devtype": "Television",
+      "tier": "verified",
+      "osname": "Tizen",
+      "srcfamily": "TV",
+      "vendor": "Samsung Electronics",
+      "srchwversion": "QN90C",
+      "srcswversion": "1660.5",
+      "purdue": 4,
+      "role": "consumer",
+      "behaviours": [
+        "vendor-cloud",
+        "streaming",
+        "dns"
+      ]
+    },
+    "media_appletv": {
+      "devtype": "Media Player",
+      "tier": "verified",
+      "osname": "tvOS",
+      "srcfamily": "Apple TV",
+      "vendor": "Apple, Inc.",
+      "srchwversion": "4K 3rd Gen",
+      "srcswversion": "18.5",
+      "purdue": 4,
+      "role": "consumer",
+      "behaviours": [
+        "vendor-cloud",
+        "streaming",
+        "dns",
+        "ntp"
+      ]
+    },
+    "media_roku": {
+      "devtype": "Media Player",
+      "tier": "verified",
+      "osname": "Roku OS",
+      "srcfamily": "Streaming Stick",
+      "vendor": "Roku",
+      "srchwversion": "Streaming Stick 4K",
+      "srcswversion": "13.0.0",
+      "purdue": 4,
+      "role": "consumer",
+      "behaviours": [
+        "vendor-cloud",
+        "streaming",
+        "dns"
+      ]
+    },
+    "speaker_sonos": {
+      "devtype": "Smart Speaker",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Linux",
+      "srcfamily": "Speaker",
+      "vendor": "Sonos",
+      "srchwversion": "Era 100",
+      "srcswversion": "16.4",
+      "purdue": 4,
+      "role": "consumer",
+      "behaviours": [
+        "vendor-cloud",
+        "streaming",
+        "dns",
+        "ntp"
+      ]
+    },
+    "assist_amazon": {
+      "devtype": "Smart Speaker",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Fire OS",
+      "srcfamily": "Echo",
+      "vendor": "Amazon Technologies",
+      "srchwversion": "Echo Dot 5",
+      "srcswversion": "8960323972",
+      "purdue": 4,
+      "role": "consumer",
+      "behaviours": [
+        "vendor-cloud",
+        "dns",
+        "ntp"
+      ]
+    },
+    "thermo_nest": {
+      "devtype": "Thermostat",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Embedded",
+      "srcfamily": "Thermostat",
+      "vendor": "Nest Labs",
+      "srchwversion": "Learning Thermostat 3",
+      "srcswversion": "6.2-31",
+      "purdue": 4,
+      "role": "consumer",
+      "behaviours": [
+        "vendor-cloud",
+        "dns",
+        "ntp"
+      ]
+    },
+    "thermo_tado": {
+      "devtype": "Thermostat",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Embedded",
+      "srcfamily": "Thermostat",
+      "vendor": "tado GmbH",
+      "srchwversion": "Internet Bridge",
+      "srcswversion": "81.1",
+      "purdue": 4,
+      "role": "consumer",
+      "behaviours": [
+        "vendor-cloud",
+        "dns"
+      ]
+    },
+    "plug_tuya": {
+      "devtype": "Smart Plug",
+      "tier": "extended",
+      "fallback_devtype": "IOT",
+      "osname": "Embedded",
+      "srcfamily": "Smart Plug",
+      "vendor": "Tuya Smart",
+      "srchwversion": "SP20",
+      "srcswversion": "1.1.7",
+      "purdue": 4,
+      "role": "consumer",
+      "behaviours": [
+        "vendor-cloud",
+        "dns"
+      ]
+    },
+    "esp_generic": {
+      "devtype": "IOT",
+      "tier": "verified",
+      "osname": "Embedded",
+      "srcfamily": "Microcontroller",
+      "vendor": "Espressif Inc.",
+      "srchwversion": "ESP32-WROOM-32",
+      "srcswversion": "4.4.6",
+      "purdue": 4,
+      "role": "consumer",
+      "behaviours": [
+        "mqtt",
+        "dns",
+        "ntp"
+      ]
+    },
+    "rpi_generic": {
+      "devtype": "Computer",
+      "tier": "verified",
+      "osname": "Debian",
+      "srcfamily": "Computer",
+      "vendor": "Raspberry Pi",
+      "srchwversion": "Raspberry Pi 4 Model B",
+      "srcswversion": "12",
+      "purdue": 4,
+      "role": "server",
+      "behaviours": [
+        "dns",
+        "ntp",
+        "https-generic",
+        "ssh-admin",
+        "ping"
+      ]
+    },
+    "ap_ubiquiti": {
+      "devtype": "Network Generic",
+      "tier": "verified",
+      "osname": "UniFi Firmware",
+      "srcfamily": "UniFi",
+      "vendor": "Ubiquiti Inc",
+      "srchwversion": "U6-Pro",
+      "srcswversion": "7.2.123.16565",
+      "purdue": 4,
+      "role": "network",
+      "behaviours": [
+        "ntp",
+        "dns",
+        "vendor-cloud",
+        "snmp",
+        "ping"
+      ]
+    },
+    "nas_synology": {
+      "devtype": "Network Generic",
+      "tier": "verified",
+      "osname": "Linux",
+      "srcfamily": "NAS",
+      "vendor": "Synology Incorporated",
+      "srchwversion": "DS923+",
+      "srcswversion": "DSM 7.2.1",
+      "purdue": 4,
+      "role": "server",
+      "behaviours": [
+        "dns",
+        "ntp",
+        "vendor-cloud",
+        "smb-internal",
+        "https-generic",
+        "ping"
+      ]
+    },
+    "pc_windows": {
+      "devtype": "Computer",
+      "tier": "verified",
+      "osname": "Windows",
+      "srcfamily": "Computer",
+      "vendor": "Dell Inc.",
+      "srchwversion": "OptiPlex 7010",
+      "srcswversion": "10/11",
+      "purdue": 4,
+      "role": "workstation",
+      "behaviours": [
+        "dns",
+        "ntp",
+        "https-generic",
+        "browsing",
+        "m365",
+        "ad-auth",
+        "update"
+      ]
+    },
+    "lt_macbook": {
+      "devtype": "Laptop",
+      "tier": "verified",
+      "osname": "macOS",
+      "srcfamily": "Mac",
+      "vendor": "Apple, Inc.",
+      "srchwversion": "MacBook Pro",
+      "srcswversion": "15.5",
+      "purdue": 4,
+      "role": "workstation",
+      "behaviours": [
+        "dns",
+        "ntp",
+        "https-generic",
+        "browsing",
+        "m365",
+        "apple-cloud"
+      ]
+    },
+    "mob_iphone": {
+      "devtype": "Phone",
+      "tier": "verified",
+      "osname": "iOS",
+      "srcfamily": "iPhone",
+      "vendor": "Apple, Inc.",
+      "srchwversion": "14 Pro Max",
+      "srcswversion": "18.7",
+      "purdue": 4,
+      "role": "mobile",
+      "behaviours": [
+        "dns",
+        "https-generic",
+        "browsing",
+        "apple-cloud",
+        "social"
+      ]
+    },
+    "mob_android": {
+      "devtype": "Phone",
+      "tier": "verified",
+      "osname": "Android",
+      "srcfamily": "Android Phone",
+      "vendor": "Samsung Electronics",
+      "srchwversion": "Galaxy S24",
+      "srcswversion": "14",
+      "purdue": 4,
+      "role": "mobile",
+      "behaviours": [
+        "dns",
+        "https-generic",
+        "browsing",
+        "social"
+      ]
+    },
+    "srv_vm": {
+      "devtype": "Virtual Machine",
+      "tier": "verified",
+      "osname": "Windows",
+      "srcfamily": "Computer",
+      "vendor": "VMware, Inc.",
+      "srchwversion": "Virtual Machine",
+      "srcswversion": "2022",
+      "purdue": 4,
+      "role": "server",
+      "behaviours": [
+        "dns",
+        "ntp",
+        "https-generic",
+        "ad-auth",
+        "update",
+        "smb-internal",
+        "ping"
+      ]
+    },
+    "srv_linux": {
+      "devtype": "Virtual Machine",
+      "tier": "verified",
+      "osname": "Debian",
+      "srcfamily": "Computer",
+      "vendor": "VMware, Inc.",
+      "srchwversion": "Virtual Machine",
+      "srcswversion": "12",
+      "purdue": 4,
+      "role": "server",
+      "behaviours": [
+        "dns",
+        "ntp",
+        "https-generic",
+        "update",
+        "ssh-admin",
+        "ping"
+      ]
+    }
+  }
+}

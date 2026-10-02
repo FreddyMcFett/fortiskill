@@ -1,0 +1,526 @@
+{
+ "_provenance": {
+  "webcat": "FortiGuard web filter category IDs. 38 IDs cross-checked against live FortiOS 7.6.6/8.0.0 webfilter+dnsfilter logs; remainder from community.fortinet.com Technical Tip 104877 (current 7.4+ table). See references/log-types.md.",
+  "apps": "app / appid / appcat / apprisk tuples, every row observed in the reference FortiGate logs (FortiOS 7.6.6 + 8.0.0, Aug 2026).",
+  "ips_verified": "attack name + attackid taken verbatim from Fortinet documentation sample log lines. Any signature NOT in this list must be looked up on fortiguard.com before use - do not invent attackid values.",
+  "dos_anomalies": "attack + attackid from Fortinet documentation DoS-policy anomaly sample logs."
+ },
+ "webcat": {
+  "0": "Unrated",
+  "1": "Drug Abuse",
+  "2": "Alternative Beliefs",
+  "3": "Hacking",
+  "4": "Illegal or Unethical",
+  "5": "Discrimination",
+  "6": "Explicit Violence",
+  "7": "Abortion",
+  "8": "Other Adult Materials",
+  "9": "Advocacy Organizations",
+  "11": "Gambling",
+  "12": "Extremist Groups",
+  "13": "Nudity and Risque",
+  "14": "Pornography",
+  "15": "Dating",
+  "16": "Weapons (Sales)",
+  "17": "Advertising",
+  "18": "Brokerage and Trading",
+  "19": "Freeware and Software Downloads",
+  "20": "Games",
+  "23": "Web-based Email",
+  "24": "File Sharing and Storage",
+  "25": "Streaming Media and Download",
+  "26": "Malicious Websites",
+  "28": "Entertainment",
+  "29": "Arts and Culture",
+  "30": "Education",
+  "31": "Finance and Banking",
+  "33": "Health and Wellness",
+  "34": "Job Search",
+  "35": "Medicine",
+  "36": "News and Media",
+  "37": "Social Networking",
+  "38": "Political Organizations",
+  "39": "Reference",
+  "40": "Global Religion",
+  "41": "Search Engines and Portals",
+  "42": "Shopping",
+  "43": "General Organizations",
+  "44": "Society and Lifestyles",
+  "46": "Sports",
+  "47": "Travel",
+  "48": "Personal Vehicles",
+  "49": "Business",
+  "50": "Information and Computer Security",
+  "51": "Government and Legal Organizations",
+  "52": "Information Technology",
+  "53": "Armed Forces",
+  "54": "Dynamic Content",
+  "55": "Meaningless Content",
+  "56": "Web Hosting",
+  "57": "Marijuana",
+  "58": "Folklore",
+  "59": "Proxy Avoidance",
+  "61": "Phishing",
+  "62": "Plagiarism",
+  "63": "Sex Education",
+  "64": "Alcohol",
+  "65": "Tobacco",
+  "66": "Lingerie and Swimsuit",
+  "67": "Sports Hunting and War Games",
+  "68": "Web Chat",
+  "69": "Instant Messaging",
+  "70": "Newsgroups and Message Boards",
+  "71": "Digital Postcards",
+  "72": "Peer-to-peer File Sharing",
+  "75": "Internet Radio and TV",
+  "76": "Internet Telephony",
+  "77": "Child Education",
+  "78": "Real Estate",
+  "79": "Restaurant and Dining",
+  "80": "Personal Websites and Blogs",
+  "81": "Secure Websites",
+  "82": "Content Servers",
+  "83": "Child Sexual Abuse",
+  "84": "Web-based Applications",
+  "85": "Domain Parking",
+  "86": "Spam URLs",
+  "87": "Personal Privacy",
+  "88": "Dynamic DNS",
+  "89": "Auction",
+  "90": "Newly Observed Domain",
+  "91": "Newly Registered Domain",
+  "92": "Charitable Organizations",
+  "93": "Remote Access",
+  "94": "Web Analytics",
+  "95": "Online Meeting",
+  "96": "Terrorism",
+  "97": "URL Shortening",
+  "98": "Crypto Mining",
+  "99": "Potentially Unwanted Program",
+  "100": "Artificial Intelligence Technology",
+  "101": "Cryptocurrency",
+  "255": "Unknown"
+ },
+ "apps": [
+  [
+   "SSL_TLSv1.3",
+   47013,
+   "Network.Service",
+   "medium"
+  ],
+  [
+   "SSL",
+   15895,
+   "Network.Service",
+   "elevated"
+  ],
+  [
+   "SSL_TLSv1.2",
+   41540,
+   "Network.Service",
+   "medium"
+  ],
+  [
+   "SSL_TLSv1.3.PQC",
+   56688,
+   "Network.Service",
+   "medium"
+  ],
+  [
+   "DNS",
+   16195,
+   "Network.Service",
+   "elevated"
+  ],
+  [
+   "DNS.Over.TLS",
+   50869,
+   "Network.Service",
+   "medium"
+  ],
+  [
+   "DNS.Over.HTTPS",
+   47816,
+   "Network.Service",
+   "medium"
+  ],
+  [
+   "Ping",
+   24466,
+   "Network.Service",
+   "elevated"
+  ],
+  [
+   "QUIC",
+   40169,
+   "Network.Service",
+   "low"
+  ],
+  [
+   "NTP",
+   16270,
+   "Network.Service",
+   "elevated"
+  ],
+  [
+   "ISAKMP",
+   16996,
+   "Network.Service",
+   "elevated"
+  ],
+  [
+   "WebSocket",
+   36968,
+   "Network.Service",
+   "elevated"
+  ],
+  [
+   "DHCP/DHCP Relay",
+   15938,
+   "Network.Service",
+   "elevated"
+  ],
+  [
+   "BGP",
+   15825,
+   "Network.Service",
+   "elevated"
+  ],
+  [
+   "TELNET",
+   15895,
+   "Network.Service",
+   "elevated"
+  ],
+  [
+   "HTTP.BROWSER",
+   15893,
+   "Web.Client",
+   "medium"
+  ],
+  [
+   "HTTP.BROWSER_Firefox",
+   34050,
+   "Web.Client",
+   "elevated"
+  ],
+  [
+   "HTTPS",
+   15894,
+   "Web.Client",
+   "medium"
+  ],
+  [
+   "Microsoft.Teams",
+   43541,
+   "Collaboration",
+   "elevated"
+  ],
+  [
+   "Microsoft.365.Portal",
+   41468,
+   "Collaboration",
+   "elevated"
+  ],
+  [
+   "Microsoft.Portal",
+   41469,
+   "Collaboration",
+   "elevated"
+  ],
+  [
+   "Microsoft.Authentication",
+   41475,
+   "Collaboration",
+   "elevated"
+  ],
+  [
+   "Microsoft.OneNote",
+   40175,
+   "Collaboration",
+   "elevated"
+  ],
+  [
+   "Microsoft.SharePoint",
+   16190,
+   "Collaboration",
+   "elevated"
+  ],
+  [
+   "WhatsApp",
+   28057,
+   "Collaboration",
+   "elevated"
+  ],
+  [
+   "Claude",
+   55810,
+   "GenAI",
+   "low"
+  ],
+  [
+   "Claude.API",
+   61475,
+   "GenAI",
+   "low"
+  ],
+  [
+   "Microsoft.365.Copilot",
+   61585,
+   "GenAI",
+   "low"
+  ],
+  [
+   "TikTok",
+   44419,
+   "Social.Media",
+   "elevated"
+  ],
+  [
+   "Snapchat",
+   34560,
+   "Social.Media",
+   "elevated"
+  ],
+  [
+   "Facebook",
+   15832,
+   "Social.Media",
+   "medium"
+  ],
+  [
+   "YouTube",
+   31077,
+   "Video/Audio",
+   "elevated"
+  ],
+  [
+   "Netflix",
+   18155,
+   "Video/Audio",
+   "elevated"
+  ],
+  [
+   "Spotify",
+   17405,
+   "Video/Audio",
+   "medium"
+  ],
+  [
+   "iCloud",
+   29880,
+   "Storage.Backup",
+   "medium"
+  ],
+  [
+   "OneDrive",
+   23382,
+   "Storage.Backup",
+   "medium"
+  ],
+  [
+   "Microsoft.Outlook",
+   15816,
+   "Email",
+   "medium"
+  ],
+  [
+   "Gmail",
+   15817,
+   "Email",
+   "medium"
+  ],
+  [
+   "IMAPS",
+   27783,
+   "Email",
+   "medium"
+  ],
+  [
+   "Microsoft.Windows.Update",
+   16009,
+   "Update",
+   "elevated"
+  ],
+  [
+   "Apple.Software.Update",
+   16171,
+   "Update",
+   "low"
+  ],
+  [
+   "Root.Certificate.URL",
+   41474,
+   "Update",
+   "low"
+  ],
+  [
+   "Apple.Services",
+   42662,
+   "General.Interest",
+   "elevated"
+  ],
+  [
+   "Apple.Maps",
+   35151,
+   "General.Interest",
+   "elevated"
+  ],
+  [
+   "Apple.Store",
+   38900,
+   "General.Interest",
+   "elevated"
+  ],
+  [
+   "Apple.Siri",
+   59904,
+   "General.Interest",
+   "elevated"
+  ],
+  [
+   "Apple.Push.Notification",
+   39243,
+   "General.Interest",
+   "low"
+  ],
+  [
+   "Windows.Push.Notification",
+   52452,
+   "General.Interest",
+   "elevated"
+  ],
+  [
+   "Google.Push.Notification",
+   43714,
+   "General.Interest",
+   "low"
+  ],
+  [
+   "Google.Services",
+   42533,
+   "General.Interest",
+   "elevated"
+  ],
+  [
+   "Google.Play",
+   33053,
+   "General.Interest",
+   "elevated"
+  ],
+  [
+   "Google.Ads",
+   42537,
+   "General.Interest",
+   "elevated"
+  ],
+  [
+   "FortiEDR.Core",
+   50610,
+   "Cloud.IT",
+   "elevated"
+  ],
+  [
+   "Zoho",
+   17466,
+   "Business",
+   "elevated"
+  ],
+  [
+   "Fortinet.FortiClient",
+   10005193,
+   "IoT",
+   "low"
+  ],
+  [
+   "Apple.Devices",
+   10002332,
+   "IoT",
+   "low"
+  ]
+ ],
+ "ips_verified": [
+  [
+   "Adobe.Flash.newfunction.Handling.Code.Execution",
+   23305,
+   "critical"
+  ],
+  [
+   "Eicar.Virus.Test.File",
+   29844,
+   "info"
+  ]
+ ],
+ "dos_anomalies": [
+  [
+   "icmp_flood",
+   16777316,
+   "critical"
+  ],
+  [
+   "tcp_syn_flood",
+   100663396,
+   "critical"
+  ]
+ ],
+ "devtype_verified": [
+  "Unknown",
+  "Virtual Machine",
+  "Firewall",
+  "Phone",
+  "Network Generic",
+  "Computer",
+  "Laptop",
+  "Network",
+  "Television",
+  "Media Player",
+  "IOT",
+  "Switch"
+ ],
+ "osname_verified": [
+  "Unknown",
+  "Windows",
+  "macOS",
+  "iOS",
+  "Linux",
+  "Debian",
+  "Android",
+  "webOS",
+  "tvOS",
+  "SFOS",
+  "UniFi Firmware",
+  "FortiManager OS",
+  "FortiAnalyzer OS",
+  "FortiSandbox OS"
+ ],
+ "srcfamily_verified": [
+  "iPhone",
+  "Mac",
+  "Computer",
+  "TV",
+  "Cloud",
+  "UniFi",
+  "Network Appliance",
+  "FortiManager",
+  "FortiAnalyzer",
+  "FortiSandbox"
+ ],
+ "appcat_verified": [
+  "Network.Service",
+  "unscanned",
+  "unknown",
+  "Collaboration",
+  "Web.Client",
+  "GenAI",
+  "Social.Media",
+  "General.Interest",
+  "IoT",
+  "Storage.Backup",
+  "Update",
+  "Email",
+  "Video/Audio",
+  "Cloud.IT",
+  "Business",
+  "Game"
+ ]
+}
