@@ -1,0 +1,7 @@
+# The compliance gate and the release channel: changes need the owner's review
+# (enable "Require review from Code Owners" in the ruleset for main).
+/.compliance/                 @FreddyMcFett
+/.github/                     @FreddyMcFett
+/.githooks/                   @FreddyMcFett
+/scripts/compliance_scan.py   @FreddyMcFett
+/scripts/sanitize_office.py   @FreddyMcFett

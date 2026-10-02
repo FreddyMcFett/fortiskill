@@ -1,0 +1,4 @@
+#!/bin/sh
+# Compliance scan of the commit message - commit messages are public too.
+# Enable once per clone: git config core.hooksPath .githooks
+exec python3 "$(git rev-parse --show-toplevel)/scripts/compliance_scan.py" --commit-msg "$1"

@@ -1,0 +1,56 @@
+# Compliance policy of the fortiskill repo, read by scripts/compliance_scan.py.
+#
+# This repository is PUBLIC. A finding of the compliance scan can only be accepted
+# here: one [[allow]] entry per accepted case, each with a reason. Changes to this
+# file are reviewed by the code owners (.github/CODEOWNERS). List all rule ids with
+#   python3 scripts/compliance_scan.py --list-rules
+#
+# [[allow]] keys
+#   rule     rule id or glob, e.g. "network.public-ip" or "pii.*"
+#   path     repo path or glob of the file the finding is in
+#   match    optional regex the matched value must contain. Keep it generic and
+#            never paste the sensitive value itself here.
+#   reason   why this is not a compliance problem (mandatory)
+#   expires  optional date (YYYY-MM-DD); afterwards the entry is ignored and reported
+
+[settings]
+# Domains that may appear in e-mail addresses (RFC 2606 placeholders; .example,
+# .test, .invalid and .localhost are always allowed).
+allowed_email_domains = ["example.com", "example.net", "example.org", "users.noreply.github.com"]
+# Individual addresses that may appear (commit trailers, bots).
+allowed_emails = ["noreply@anthropic.com", "noreply@github.com"]
+# Allowed values of Office/PDF/image author fields (docProps creator/lastModifiedBy,
+# app Manager, PDF /Author, EXIF Artist). Everything else counts as a personal name.
+allowed_document_authors = ["", "Fortinet"]
+# Commit author/committer e-mails that do not expose a personal address.
+commit_email_patterns = ["*@users.noreply.github.com", "noreply@github.com", "noreply@anthropic.com"]
+
+[[allow]]
+rule = "file.needs-review"
+path = "skills/fortinet-pptx/assets/FTNT_PPT_16x9_Light_Template.pptx"
+reason = """Fortinet 16:9 corporate template used by the fortinet-pptx skill. Reviewed and \
+sanitized on 2026-10-02 with scripts/sanitize_office.py (co-authoring history with personal \
+names removed, rendering unchanged). Its content is still scanned on every run."""
+
+[[allow]]
+rule = "network.public-ip"
+path = "skills/faz-log-forge/scripts/fazgen.py"
+reason = """Synthetic log generator: destination catalogue of well-known public SaaS, CDN, \
+DNS and threat-intel addresses, needed for realistic demo traffic. No customer addresses."""
+
+[[allow]]
+rule = "network.public-ip"
+path = "skills/faz-log-forge/references/log-anatomy.md"
+reason = "Public cloud-service addresses in a log-format example (ipaddr list field); not customer data."
+
+[[allow]]
+rule = "confidential.nda"
+path = "skills/fortinet-engineer/references/confidence-protocol.md"
+reason = "Guidance that roadmap questions go through the Fortinet account team; describes the process only."
+
+[[allow]]
+rule = "confidential.marking"
+path = "skills/fortinet-kb-article/SKILL.md"
+match = "(?i)^internal.only$"
+reason = "Name of the Fortinet Community KB visibility setting the skill asks about, not a marking of this file."
+

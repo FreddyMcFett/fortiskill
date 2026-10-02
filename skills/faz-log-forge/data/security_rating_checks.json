@@ -1,0 +1,7231 @@
+{
+ "_provenance": {
+  "7.6": "built from FortiAnalyzer Xlog CSV export FGT90GDEMO000001_root_Xlog_1785650404.csv (9714 records, 22 full runs, 14 partial runs)",
+  "8.0": "built from FortiAnalyzer Xlog CSV export FGVMEVDEMO0000099_root_Xlog_1786349661.csv (5701 records, 18 full runs, 7 partial runs)",
+  "note": "Every check, severity, title, result and recommendation shape here was observed in a real fgt-security-rating stream. severity_alt lists the second severity seen for FortiGuard licence checks (critical when the subscription is valid, medium when it has expired). Do not add checks by hand - re-run scripts/ingest_rating_export.py on a newer export instead."
+ },
+ "checks": {
+  "VlanManagement": {
+   "severity": "medium",
+   "title": "audit_package::check::VlanManagement",
+   "results": {
+    "passed": 24,
+    "failed": 18
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::VlanManagement",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "OmniSourceDescriptorRecommendationElement",
+           "mkey": "port2"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "WanManagementAccess": {
+   "severity": "high",
+   "title": "audit_package::check::WanManagementAccess",
+   "results": {
+    "failed": 42
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::WanManagementAccessv4",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "OmniSourceDescriptorRecommendationElement",
+           "mkey": "FEX-WAN"
+          },
+          {
+           "type": "OmniSourceDescriptorRecommendationElement",
+           "mkey": "x1"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::WanManagementAccessv4",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "OmniSourceDescriptorRecommendationElement",
+           "mkey": "port1"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": []
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "VipOverlap": {
+   "severity": "low",
+   "title": "audit_package::check::VipOverlap",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "WidsSignatures": {
+   "severity": "high",
+   "title": "audit_package::check::WidsSignatures",
+   "results": {
+    "failed": 21,
+    "passed": 18
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": []
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "ValidCertificateHttpServer": {
+   "severity": "high",
+   "title": "audit_package::check::ValidCertificateHttpServer",
+   "results": {
+    "passed": 42
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "ValidCertificateSslvpn": {
+   "severity": "high",
+   "title": "audit_package::check::ValidCertificateSslvpn",
+   "results": {
+    "exempt": 50
+   },
+   "recommendations": [
+    {
+     "result": "exempt",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::exempt_reason::noSSLVPNPolicies",
+         "options": {}
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "VlanMissingPolicies": {
+   "severity": "high",
+   "title": "audit_package::check::VlanMissingPolicies",
+   "results": {
+    "failed": 33,
+    "passed": 21
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::VlanMissingPolicies",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "OmniSourceDescriptorRecommendationElement",
+           "mkey": "MGMT"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "UnsecureProtocolHttp": {
+   "severity": "high",
+   "title": "audit_package::check::UnsecureProtocolHttp",
+   "results": {
+    "unmetDependencies": 97,
+    "passed": 50
+   },
+   "recommendations": [
+    {
+     "result": "unmetDependencies",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::unmetDependencies",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "LabelRecommendationElement",
+           "text": "audit_package::check::InterfaceClassification",
+           "options": {}
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "ValidCertificateIpsec": {
+   "severity": "high",
+   "title": "audit_package::check::ValidCertificateIPsec",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "UnresolvedFqdn": {
+   "severity": "medium",
+   "title": "audit_package::check::UnresolvedFqdn",
+   "results": {
+    "passed": 21,
+    "failed": 18
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::UnresolvedFqdn",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "LabelRecommendationElement",
+           "text": "audit_package::recommendation::UnresolvedFqdn::address",
+           "options": {}
+          },
+          {
+           "type": "ListRecommendationElement"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "UsbAutoConfig": {
+   "severity": "high",
+   "title": "audit_package::check::USBAutoConfig",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "UnsecureProtocolTelnet": {
+   "severity": "high",
+   "title": "audit_package::check::UnsecureProtocolTelnet",
+   "results": {
+    "unmetDependencies": 94,
+    "passed": 50
+   },
+   "recommendations": [
+    {
+     "result": "unmetDependencies",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::unmetDependencies",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "LabelRecommendationElement",
+           "text": "audit_package::check::InterfaceClassification",
+           "options": {}
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "TwoFactorAuthentication": {
+   "severity": "medium",
+   "title": "audit_package::check::TwoFactorAuthentication",
+   "results": {
+    "failed": 39
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::TwoFactorAuthentication",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "ListRecommendationElement"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "TwoFactorAuthenticationVpnUsers": {
+   "severity": "medium",
+   "title": "audit_package::check::TwoFactorAuthenticationVpnUsers",
+   "results": {
+    "passed": 36,
+    "failed": 3
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::TwoFactorAuthenticationVpnUsers",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "LabelRecommendationElement",
+           "text": "{USER} (ipsec)",
+           "options": {
+            "interpolateData": [
+             {
+              "type": "string",
+              "value": "jdoe",
+              "translate": false
+             }
+            ]
+           }
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::TwoFactorAuthenticationVpnUsers",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "LabelRecommendationElement",
+           "text": "{USER} (ipsec)",
+           "options": {
+            "interpolateData": [
+             {
+              "type": "string",
+              "value": "fwadmin",
+              "translate": false
+             }
+            ]
+           }
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "TrustedHosts": {
+   "severity": "medium",
+   "title": "audit_package::check::TrustedHosts",
+   "results": {
+    "failed": 39
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::TrustedHosts",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "LabelRecommendationElement",
+           "text": "audit_package::recommendation::TrustedHosts::missing",
+           "options": {}
+          },
+          {
+           "type": "ListRecommendationElement"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "SystemUptime": {
+   "severity": "low",
+   "title": "audit_package::check::SystemUptime",
+   "results": {
+    "passed": 98,
+    "failed": 4
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::SystemUptime",
+         "options": {}
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "UnresolvedDynamicSdn": {
+   "severity": "medium",
+   "title": "audit_package::check::UnresolvedDynamicSdn",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "ThirdPartyRouter": {
+   "severity": "none",
+   "title": "audit_package::check::ThirdPartyRouter",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "PhaseTwoInterfaceProposal": {
+   "severity": "medium",
+   "title": "audit_package::check::PhaseTwoInterfaceProposal",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "SnmpPolling": {
+   "severity": "medium",
+   "title": "audit_package::check::SnmpPolling",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "PolicyExplicitInterfaces": {
+   "severity": "low",
+   "title": "audit_package::check::PolicyExplicitInterfaces",
+   "results": {
+    "passed": 50
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "PolicyStatsOversize": {
+   "severity": "medium",
+   "title": "audit_package::check::PolicyStatsOversize",
+   "results": {
+    "passed": 50
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "PhaseTwoInterfaceDiffieHellmanGroup": {
+   "severity": "medium",
+   "title": "audit_package::check::PhaseTwoInterfaceDiffieHellmanGroup",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "PolicyUniqueNames": {
+   "severity": "medium",
+   "title": "audit_package::check::PolicyUniqueNames",
+   "results": {
+    "passed": 50
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "PsepsePortConnection": {
+   "severity": "medium",
+   "title": "audit_package::check::PSEPSEPortConnection",
+   "results": {
+    "failed": 21
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::PSEPSEPortConnection::Default",
+         "options": {}
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "config"
+  },
+  "SecureWirelessConnections": {
+   "severity": "high",
+   "title": "audit_package::check::SecureWirelessConnections",
+   "results": {
+    "passed": 42
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "SsidInsecureProtocols": {
+   "severity": "high",
+   "title": "audit_package::check::SsidInsecureProtocols",
+   "results": {
+    "passed": 42
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "RogueApDetection": {
+   "severity": "high",
+   "title": "audit_package::check::RogueApDetection",
+   "results": {
+    "failed": 21,
+    "passed": 18
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "PolicyNoInspectionWithUtm": {
+   "severity": "medium",
+   "title": "audit_package::check::PolicyNoInspectionWithUtm",
+   "results": {
+    "passed": 50
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "PolicyInspectionMode": {
+   "severity": "high",
+   "title": "audit_package::check::PolicyInspectionMode",
+   "results": {
+    "passed": 50
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "PhaseOneInterfaceIke": {
+   "severity": "medium",
+   "title": "audit_package::check::PhaseOneInterfaceIke",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "PhaseOneInterfaceProposal": {
+   "severity": "medium",
+   "title": "audit_package::check::PhaseOneInterfaceProposal",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "PolicyActiveInterface": {
+   "severity": "low",
+   "title": "audit_package::check::PolicyActiveInterface",
+   "results": {
+    "passed": 50
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "NtpServers": {
+   "severity": "medium",
+   "title": "audit_package::check::NtpServers",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "PhaseOneInterfaceDiffieHellmanGroup": {
+   "severity": "medium",
+   "title": "audit_package::check::PhaseOneInterfaceDiffieHellmanGroup",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "LoginAttempts": {
+   "severity": "medium",
+   "title": "audit_package::check::LoginAttempts",
+   "results": {
+    "passed": 21,
+    "failed": 43
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::LoginAttempts",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "LabelRecommendationElement",
+           "text": "audit_package::recommendation::LoginAttempts::failedDuration",
+           "options": {
+            "interpolateData": [
+             {
+              "type": "string",
+              "value": 30,
+              "translate": false
+             }
+            ]
+           }
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "LoggingReporting": {
+   "severity": "critical",
+   "title": "audit_package::check::LoggingReporting",
+   "results": {
+    "failed": 21,
+    "passed": 18
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::LoggingReporting",
+         "options": {}
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "LocalLogDisk": {
+   "severity": "low",
+   "title": "audit_package::check::LocalLogDisk",
+   "results": {
+    "exempt": 21,
+    "passed": 18
+   },
+   "recommendations": [
+    {
+     "result": "exempt",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::exempt_reason::LocalLogDisk",
+         "options": {}
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "MclagTierPlusCandidate": {
+   "severity": "none",
+   "title": "audit_package::check::MclagTierPlusCandidate",
+   "results": {
+    "exempt": 39
+   },
+   "recommendations": [
+    {
+     "result": "exempt",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::exempt_reason::MclagTierPlusCandidate::not_found",
+         "options": {}
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "result": "exempt",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::exempt_reason::MclagTierPlusCandidate::no_fsw",
+         "options": {}
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "MclagTier1Candidate": {
+   "severity": "none",
+   "title": "audit_package::check::MclagTier1Candidate",
+   "results": {
+    "exempt": 39
+   },
+   "recommendations": [
+    {
+     "result": "exempt",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::exempt_reason::MclagTier1Candidate::not_found",
+         "options": {}
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "result": "exempt",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::exempt_reason::MclagTier1Candidate::no_fsw",
+         "options": {}
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "LdapServerIdentityCheck": {
+   "severity": "high",
+   "title": "audit_package::check::LDAPServerIdentityCheck",
+   "results": {
+    "exempt": 39
+   },
+   "recommendations": [
+    {
+     "result": "exempt",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::exempt_reason::LDAPServerIdentityCheck",
+         "options": {}
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "InterfaceClassification": {
+   "severity": "high",
+   "title": "audit_package::check::InterfaceClassification",
+   "results": {
+    "failed": 53
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::InterfaceClassification",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "DropdownRecommendationElement"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::InterfaceClassification",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "IdleTimeout": {
+   "severity": "medium",
+   "title": "audit_package::check::IdleTimeout",
+   "results": {
+    "failed": 65
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::IdleTimeout::tooLong",
+         "options": {}
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "IpPoolExhaust": {
+   "severity": "medium",
+   "title": "audit_package::check::IpPoolExhaust",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "FortiguardFiltering": {
+   "severity": "critical",
+   "title": "audit_package::check::FortiguardFiltering",
+   "results": {
+    "passed": 42
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "FortiguardIotVulnerability": {
+   "severity": "high",
+   "title": "audit_package::check::FortiguardIotVulnerability",
+   "results": {
+    "failed": 32,
+    "passed": 7
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::FortiguardIotVulnerability",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "OmniSourceDescriptorRecommendationElement",
+           "mkey": "00:00:5e:00:53:01"
+          },
+          {
+           "type": "OmniSourceDescriptorRecommendationElement",
+           "mkey": "00:00:5e:00:53:02"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::FortiguardIotVulnerability",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "OmniSourceDescriptorRecommendationElement",
+           "mkey": "00:00:5e:00:53:03"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "LanSegmentServers": {
+   "severity": "medium",
+   "title": "audit_package::check::LANSegmentServers",
+   "results": {
+    "passed": 42
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "FortiSwitchVersions": {
+   "severity": "low",
+   "title": "audit_package::check::FortiSwitchVersions",
+   "results": {
+    "passed": 18
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "config"
+  },
+  "FortigateIdentification": {
+   "severity": "medium",
+   "title": "audit_package::check::FortigateIdentification",
+   "results": {
+    "passed": 42
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "FortiSwitchStp": {
+   "severity": "low",
+   "title": "audit_package::check::FortiSwitchStp",
+   "results": {
+    "unmetDependencies": 16,
+    "passed": 26
+   },
+   "recommendations": [
+    {
+     "result": "unmetDependencies",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::unmetDependencies",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "LabelRecommendationElement",
+           "text": "audit_package::check::FortiSwitchAuthorized",
+           "options": {}
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "config"
+  },
+  "FortiSwitchLockdownLldpProfile": {
+   "severity": "low",
+   "title": "audit_package::check::FortiSwitchLockdownLldpProfile",
+   "results": {
+    "unmetDependencies": 81
+   },
+   "recommendations": [
+    {
+     "result": "unmetDependencies",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::unmetDependencies",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "LabelRecommendationElement",
+           "text": "audit_package::check::FortiSwitchAuthorized",
+           "options": {}
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "result": "unmetDependencies",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::unmetDependencies",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "LabelRecommendationElement",
+           "text": "audit_package::check::FortiSwitchFortiLinkRedundancy",
+           "options": {}
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "result": "unmetDependencies",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::unmetDependencies",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "LabelRecommendationElement",
+           "text": "audit_package::check::FortiSwitchFortiLinkRedundancy",
+           "options": {}
+          },
+          {
+           "type": "LabelRecommendationElement",
+           "text": "audit_package::check::FortiSwitchIslRedundancy",
+           "options": {}
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "config"
+  },
+  "FortiSwitchAuthorized": {
+   "severity": "low",
+   "title": "audit_package::check::FortiSwitchAuthorized",
+   "results": {
+    "passed": 21
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "config"
+  },
+  "FortilinkCapacity": {
+   "severity": "low",
+   "title": "audit_package::check::FortilinkCapacity",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "FortiSwitchIslRedundancy": {
+   "severity": "low",
+   "title": "audit_package::check::FortiSwitchIslRedundancy",
+   "results": {
+    "passed": 21
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "config"
+  },
+  "FortiSwitchQuarantineBouncePort": {
+   "severity": "low",
+   "title": "audit_package::check::FortiSwitchQuarantineBouncePort",
+   "results": {
+    "passed": 21,
+    "failed": 18
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::FortiSwitchQuarantineBouncePort",
+         "options": {}
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "FortiSwitchFortiLinkRedundancy": {
+   "severity": "low",
+   "title": "audit_package::check::FortiSwitchFortiLinkRedundancy",
+   "results": {
+    "failed": 21
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::FortiSwitchFortiLinkRedundancy",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "OmniSourceDescriptorRecommendationElement",
+           "mkey": "LAB-FSW-01"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "config"
+  },
+  "FortiSwitchBiosUpgrade": {
+   "severity": "medium",
+   "title": "audit_package::check::FortiSwitchBiosUpgrade",
+   "results": {
+    "passed": 21
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "config"
+  },
+  "FortiSandboxConnection": {
+   "severity": "critical",
+   "title": "audit_package::check::FortiSandboxConnection",
+   "results": {
+    "passed": 42
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "FortiSwitchPortSpeed": {
+   "severity": "none",
+   "title": "audit_package::check::FortiSwitchPortSpeed",
+   "results": {
+    "failed": 21
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "config"
+  },
+  "FortiSwitchIslLockdown": {
+   "severity": "low",
+   "title": "audit_package::check::FortiSwitchIslLockdown",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "ForticareMultipleAccounts": {
+   "severity": "medium",
+   "title": "audit_package::check::ForticareMultipleAccounts",
+   "results": {
+    "exempt": 21,
+    "failed": 18
+   },
+   "recommendations": [
+    {
+     "result": "exempt",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::exempt_reason::nonRoot",
+         "options": {}
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::ForticareMultipleAccounts::root",
+         "options": {}
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "FortiSandboxConfigured": {
+   "severity": "high",
+   "title": "audit_package::check::FortiSandboxConfigured",
+   "results": {
+    "failed": 43,
+    "passed": 43
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::FortiSandboxConfigured::filesNotSubmitted",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::FortiSandboxConfigured::notConfigured",
+         "options": {}
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "FortiExtenderPdnInterfaceMisconfiguration": {
+   "severity": "high",
+   "title": "audit_package::check::FortiExtenderPdnInterfaceMisconfiguration",
+   "results": {
+    "passed": 41
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "FortiExtenderAuthorized": {
+   "severity": "low",
+   "title": "audit_package::check::FortiExtenderAuthorized",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "FortiCareRegistered": {
+   "severity": "critical",
+   "title": "audit_package::check::FortiCareRegistered",
+   "results": {
+    "passed": 126,
+    "error": 5
+   },
+   "recommendations": [
+    {
+     "result": "error",
+     "structure": [
+      {
+       "structure": []
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "FortiClientVulnerabilities": {
+   "severity": "critical",
+   "title": "audit_package::check::FortiClientVulnerabilities",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "FortiApAuthorized": {
+   "severity": "medium",
+   "title": "audit_package::check::FortiAPAuthorized",
+   "results": {
+    "passed": 44
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "FortiApVersions": {
+   "severity": "low",
+   "title": "audit_package::check::FortiApVersions",
+   "results": {
+    "passed": 44
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "ExpiredSchedule": {
+   "severity": "medium",
+   "title": "audit_package::check::ExpiredSchedule",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "FortiApUtmSsid": {
+   "severity": "high",
+   "title": "audit_package::check::FortiApUtmSsid",
+   "results": {
+    "passed": 44
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "ExpiredPolicies": {
+   "severity": "medium",
+   "title": "audit_package::check::ExpiredPolicies",
+   "results": {
+    "passed": 51
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "ExpiredAutomationTriggerSchedule": {
+   "severity": "low",
+   "title": "audit_package::check::ExpiredAutomationTriggerSchedule",
+   "results": {
+    "exempt": 40
+   },
+   "recommendations": [
+    {
+     "result": "exempt",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::exempt_reason::ExpiredAutomationTriggerSchedule",
+         "options": {}
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "ExpiredApiKeys": {
+   "severity": "medium",
+   "title": "audit_package::check::ExpiredApiKeys",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "DisabledMatchVip": {
+   "severity": "high",
+   "title": "audit_package::check::DisabledMatchVip",
+   "results": {
+    "passed": 51
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "DnsHelper": {
+   "severity": "high",
+   "title": "audit_package::check::DnsHelper",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "EndpointRegistration": {
+   "severity": "low",
+   "title": "audit_package::check::EndpointRegistration",
+   "results": {
+    "passed": 22,
+    "failed": 21
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::EndpointRegistration",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "OmniSourceDescriptorRecommendationElement",
+           "mkey": "port5"
+          },
+          {
+           "type": "OmniSourceDescriptorRecommendationElement",
+           "mkey": "port6"
+          },
+          {
+           "type": "OmniSourceDescriptorRecommendationElement",
+           "mkey": "vClients"
+          },
+          {
+           "type": "OmniSourceDescriptorRecommendationElement",
+           "mkey": "vDMZ"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::EndpointRegistration",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "DisableUsernameSensitivity": {
+   "severity": "high",
+   "title": "audit_package::check::DisableUsernameSensitivity",
+   "results": {
+    "exempt": 39
+   },
+   "recommendations": [
+    {
+     "result": "exempt",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::exempt_reason::DisableUsernameSensitivity",
+         "options": {}
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "DeviceEndOfSupport": {
+   "severity": "medium",
+   "title": "audit_package::check::DeviceEndOfSupport",
+   "results": {
+    "passed": 106
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "DetectBotnetConnections": {
+   "severity": "high",
+   "title": "audit_package::check::DetectBotnetConnections",
+   "results": {
+    "unmetDependencies": 210
+   },
+   "recommendations": [
+    {
+     "result": "unmetDependencies",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::unmetDependencies",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "LabelRecommendationElement",
+           "text": "audit_package::check::InterfaceClassification",
+           "options": {}
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "DefaultPortSsh": {
+   "severity": "high",
+   "title": "audit_package::check::DefaultPortSSH",
+   "results": {
+    "passed": 42
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "FortiAnalyzerConnection": {
+   "severity": "critical",
+   "title": "audit_package::check::FortiAnalyzerConnection",
+   "results": {
+    "passed": 38,
+    "failed": 18
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::FortiAnalyzerNotConnected::FazCloud",
+         "options": {}
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "DeviceDiscovery": {
+   "severity": "high",
+   "title": "audit_package::check::DeviceDiscovery",
+   "results": {
+    "passed": 21,
+    "failed": 21
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::DeviceDiscovery",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "OmniSourceDescriptorRecommendationElement",
+           "mkey": "port4"
+          },
+          {
+           "type": "OmniSourceDescriptorRecommendationElement",
+           "mkey": "port5"
+          },
+          {
+           "type": "OmniSourceDescriptorRecommendationElement",
+           "mkey": "vDMZ"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": []
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "DefaultPortHttps": {
+   "severity": "high",
+   "title": "audit_package::check::DefaultPortHTTPS",
+   "results": {
+    "passed": 60,
+    "failed": 5
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::DefaultPortHTTPS",
+         "options": {}
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "ClassifyRogueAccesspoints": {
+   "severity": "high",
+   "title": "audit_package::check::ClassifyRogueAccesspoints",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "AutomaticFortiguardUpdate": {
+   "severity": "critical",
+   "title": "audit_package::check::AutomaticFortiguardUpdate",
+   "results": {
+    "passed": 42
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "AuditLogSettings": {
+   "severity": "medium",
+   "title": "audit_package::check::AuditLogSettings",
+   "results": {
+    "passed": 50
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "AuditManagementInterfaces": {
+   "severity": "medium",
+   "title": "audit_package::check::AuditManagementInterfaces",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "AuditLogCapacity": {
+   "severity": "critical",
+   "title": "audit_package::check::AuditLogCapacity",
+   "results": {
+    "exempt": 21,
+    "passed": 18
+   },
+   "recommendations": [
+    {
+     "result": "exempt",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::exempt_reason::auditLogCapacitySettings",
+         "options": {}
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "AdminSportIkeTcpPortConfict": {
+   "severity": "high",
+   "title": "audit_package::check::AdminSportIkeTcpPortConfict",
+   "results": {
+    "passed": 45
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "AdminPasswordPolicy": {
+   "severity": "medium",
+   "title": "audit_package::check::AdminPasswordPolicy",
+   "results": {
+    "passed": 62
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "DuplicateFirewallObjects": {
+   "severity": "low",
+   "title": "audit_package::check::DuplicateFWObjects",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "ActivateFortiCloudService": {
+   "severity": "medium",
+   "title": "audit_package::check::ActivateFortiCloudService",
+   "results": {
+    "exempt": 21,
+    "passed": 18
+   },
+   "recommendations": [
+    {
+     "result": "exempt",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::exempt_reason::nonRoot",
+         "options": {}
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "CertificateExpiry": {
+   "severity": "high",
+   "title": "audit_package::check::CertificateExpiry",
+   "results": {
+    "passed": 21,
+    "failed": 18
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::CertificateExpiry::CertExpiring",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "OmniSourceDescriptorRecommendationElement",
+           "mkey": "FAC_SAML"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "AdminPasswordSecurity": {
+   "severity": "medium",
+   "title": "audit_package::check::AdminPasswordSecurity",
+   "results": {
+    "failed": 61,
+    "unmetDependencies": 59,
+    "passed": 49
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": []
+      }
+     ]
+    },
+    {
+     "result": "unmetDependencies",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::unmetDependencies",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "LabelRecommendationElement",
+           "text": "audit_package::check::AdminPasswordPolicy",
+           "options": {}
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "FortiguardAntiSpam": {
+   "severity": "medium",
+   "title": "audit_package::check::FortiGuardAntiSpam",
+   "results": {
+    "passed": 38,
+    "failed": 1
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::FortiGuardSubscriptions::licenseExpired",
+         "options": {
+          "interpolateData": [
+           {
+            "type": "date",
+            "value": 1776726000,
+            "translate": false
+           }
+          ]
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config",
+   "severity_alt": [
+    "critical"
+   ]
+  },
+  "FortiguardAntiVirus": {
+   "severity": "medium",
+   "title": "audit_package::check::FortiGuardAntiVirus",
+   "results": {
+    "passed": 38,
+    "failed": 1
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::FortiGuardSubscriptions::licenseExpired",
+         "options": {
+          "interpolateData": [
+           {
+            "type": "date",
+            "value": 1776726000,
+            "translate": false
+           }
+          ]
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config",
+   "severity_alt": [
+    "critical"
+   ]
+  },
+  "FortiguardFirmwareGeneralUpdates": {
+   "severity": "medium",
+   "title": "audit_package::check::FortiGuardFirmwareGeneralUpdates",
+   "results": {
+    "passed": 38,
+    "failed": 1
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::FortiGuardSubscriptions::licenseExpired",
+         "options": {
+          "interpolateData": [
+           {
+            "type": "date",
+            "value": 1776726000,
+            "translate": false
+           }
+          ]
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config",
+   "severity_alt": [
+    "critical"
+   ]
+  },
+  "FortiguardIndustrialDb": {
+   "severity": "medium",
+   "title": "audit_package::check::FortiGuardIndustrialDb",
+   "results": {
+    "passed": 38,
+    "failed": 1
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::FortiGuardSubscriptions::licenseExpired",
+         "options": {
+          "interpolateData": [
+           {
+            "type": "date",
+            "value": 1776726000,
+            "translate": false
+           }
+          ]
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config",
+   "severity_alt": [
+    "critical"
+   ]
+  },
+  "FortiguardIotDetection": {
+   "severity": "medium",
+   "title": "audit_package::check::FortiGuardIotDetection",
+   "results": {
+    "passed": 38,
+    "failed": 1
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::FortiGuardSubscriptions::licenseExpired",
+         "options": {
+          "interpolateData": [
+           {
+            "type": "date",
+            "value": 1776726000,
+            "translate": false
+           }
+          ]
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config",
+   "severity_alt": [
+    "critical"
+   ]
+  },
+  "FortiguardIps": {
+   "severity": "medium",
+   "title": "audit_package::check::FortiGuardIps",
+   "results": {
+    "passed": 38,
+    "failed": 1
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::FortiGuardSubscriptions::licenseExpired",
+         "options": {
+          "interpolateData": [
+           {
+            "type": "date",
+            "value": 1776726000,
+            "translate": false
+           }
+          ]
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config",
+   "severity_alt": [
+    "critical"
+   ]
+  },
+  "FG-IR-23-187": {
+   "severity": "medium",
+   "title": "Unprivileged user can access web console and run some unauthorized commands",
+   "results": {
+    "passed": 44
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FortiguardOutbreakPrevention": {
+   "severity": "medium",
+   "title": "audit_package::check::FortiGuardOutbreakPrevention",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "FortiguardSecurityRating": {
+   "severity": "medium",
+   "title": "audit_package::check::FortiGuardSecurityRating",
+   "results": {
+    "passed": 38,
+    "failed": 1
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::FortiGuardSubscriptions::licenseExpired",
+         "options": {
+          "interpolateData": [
+           {
+            "type": "date",
+            "value": 1776726000,
+            "translate": false
+           }
+          ]
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config",
+   "severity_alt": [
+    "critical"
+   ]
+  },
+  "FG-IR-26-060": {
+   "severity": "critical",
+   "title": "Administrative FortiCloud SSO authentication bypass",
+   "results": {
+    "passed": 120
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FortiguardWebFiltering": {
+   "severity": "medium",
+   "title": "audit_package::check::FortiGuardWebFiltering",
+   "results": {
+    "passed": 38,
+    "failed": 1
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::FortiGuardSubscriptions::licenseExpired",
+         "options": {
+          "interpolateData": [
+           {
+            "type": "date",
+            "value": 1776726000,
+            "translate": false
+           }
+          ]
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "config",
+   "severity_alt": [
+    "critical"
+   ]
+  },
+  "FG-IR-26-081": {
+   "severity": "medium",
+   "title": "Privilege escalation using undocumented CLI command",
+   "results": {
+    "passed": 79
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-19-039": {
+   "severity": "medium",
+   "title": "Server side request forgery on fortiview top threats report generation feature.",
+   "results": {
+    "passed": 44
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-152": {
+   "severity": "high",
+   "title": "Arbitrary file write on GUI",
+   "results": {
+    "passed": 44
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-167": {
+   "severity": "high",
+   "title": "OS command injection",
+   "results": {
+    "passed": 44
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-467": {
+   "severity": "medium",
+   "title": "Priviledged admin able to modify super-admins password",
+   "results": {
+    "passed": 44
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-046": {
+   "severity": "high",
+   "title": "No certificate name verification for fgfm connection",
+   "results": {
+    "passed": 106
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-220": {
+   "severity": "medium",
+   "title": "OS command injection in external connector",
+   "results": {
+    "passed": 44
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-268": {
+   "severity": "medium",
+   "title": "Informative error messages",
+   "results": {
+    "passed": 44
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-442": {
+   "severity": "medium",
+   "title": "Heap Overflow in fgfmsd",
+   "results": {
+    "passed": 120
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-26-095": {
+   "severity": "medium",
+   "title": "SQL injection in jsonrpc api",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-125": {
+   "severity": "medium",
+   "title": "Heap buffer overflow in httpd",
+   "results": {
+    "passed": 44
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-422": {
+   "severity": "low",
+   "title": "Disclosure of Logs of Devices not belonging to the Current ADOM from Log View",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-311": {
+   "severity": "medium",
+   "title": "Insertion of sensitive information into Event log",
+   "results": {
+    "passed": 44
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-221": {
+   "severity": "medium",
+   "title": "Syslog not protected by an extra layer of authentication",
+   "results": {
+    "passed": 44
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-098": {
+   "severity": "medium",
+   "title": "Stack buffer overflow in CLI command",
+   "results": {
+    "passed": 45
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-147": {
+   "severity": "medium",
+   "title": "Multiple arbitrary file deletion in the CLI",
+   "results": {
+    "passed": 45
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-26-090": {
+   "severity": "medium",
+   "title": "MFA Bypass in GUI",
+   "results": {
+    "passed": 81
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-396": {
+   "severity": "high",
+   "title": "Readonly users could run some sensitive operations",
+   "results": {
+    "passed": 45
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-26-079": {
+   "severity": "low",
+   "title": "Authentication Lockout Bypass via Race Condition",
+   "results": {
+    "passed": 80
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-258": {
+   "severity": "high",
+   "title": "OpenSSH regreSSHion Attack (CVE-2024-6387)",
+   "results": {
+    "passed": 66
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-196": {
+   "severity": "medium",
+   "title": "Format String Bug in fazsvcd",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-267": {
+   "severity": "low",
+   "title": "Lack of capacity to filter logs by administrator access",
+   "results": {
+    "passed": 45
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-201": {
+   "severity": "medium",
+   "title": "Authorization bypass via key value controlled by user",
+   "results": {
+    "passed": 44
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-099": {
+   "severity": "medium",
+   "title": "Path traversal vulnerability in CLI commands",
+   "results": {
+    "passed": 45
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-453": {
+   "severity": "medium",
+   "title": "Log Pollution via login page",
+   "results": {
+    "passed": 81
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-437": {
+   "severity": "low",
+   "title": "SQL injection in forward module",
+   "results": {
+    "passed": 81
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-106": {
+   "severity": "high",
+   "title": "Out-of-bounds Write in sndproxy",
+   "results": {
+    "passed": 45
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-143": {
+   "severity": "medium",
+   "title": "Arbitrary file delete on firmware import image feature",
+   "results": {
+    "passed": 45
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-255": {
+   "severity": "medium",
+   "title": "RADIUS Protocol CVE-2024-3596",
+   "results": {
+    "passed": 197
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-115": {
+   "severity": "medium",
+   "title": "Arbitrary file read in administrative interface",
+   "results": {
+    "passed": 44
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-432": {
+   "severity": "high",
+   "title": "Improper input validation in custom dataset",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-116": {
+   "severity": "medium",
+   "title": "OS command injection in CLI command",
+   "results": {
+    "passed": 45
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-26-092": {
+   "severity": "medium",
+   "title": "Format string vulnerability in fazsvcd",
+   "results": {
+    "passed": 81
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-494": {
+   "severity": "medium",
+   "title": "`Host` header injection",
+   "results": {
+    "passed": 205
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-124": {
+   "severity": "medium",
+   "title": "OS command injection in CLI command",
+   "results": {
+    "passed": 45
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-133": {
+   "severity": "medium",
+   "title": "Private key readable by admin",
+   "results": {
+    "passed": 62
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-304": {
+   "severity": "medium",
+   "title": "Format string vulnerability in administrative interface",
+   "results": {
+    "passed": 44
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-179": {
+   "severity": "low",
+   "title": "Path traversal vulnerability leading to file creation",
+   "results": {
+    "passed": 44
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-130": {
+   "severity": "medium",
+   "title": "Authenticated SQLI on CLI",
+   "results": {
+    "passed": 45
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-378": {
+   "severity": "medium",
+   "title": "Missing authentication check in OFTP service",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-198": {
+   "severity": "medium",
+   "title": "Race condion in FortiCloud SSO SAML authentication",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-26-078": {
+   "severity": "medium",
+   "title": "Lack of TLS Certificate Validation during initial SSO Authentication",
+   "results": {
+    "passed": 81
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-177": {
+   "severity": "medium",
+   "title": "Use of hardcoded credentials in fmgsvrd",
+   "results": {
+    "passed": 45
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-165": {
+   "severity": "medium",
+   "title": "Stack based buffer overflow in httpd",
+   "results": {
+    "passed": 45
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-127": {
+   "severity": "medium",
+   "title": "Multiple privilege escalation",
+   "results": {
+    "passed": 45
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-091": {
+   "severity": "medium",
+   "title": "SQL injections in sdnproxy daemon",
+   "results": {
+    "passed": 45
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-169": {
+   "severity": "medium",
+   "title": "Arbitrary file deletion",
+   "results": {
+    "passed": 45
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-204": {
+   "severity": "medium",
+   "title": "IDOR on download logs feature",
+   "results": {
+    "passed": 45
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-21-071": {
+   "severity": "low",
+   "title": "Multiple Vulnerabilities in Frame Aggregation and Fragmentation Implementations of 802.11 Specification (FragAttacks)",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-120": {
+   "severity": "medium",
+   "title": "FortiAP's - Arbitrary file read through the CLI",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-010": {
+   "severity": "medium",
+   "title": "XSS in /500/rescuemode and /500/sysupgrade pages",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-26-094": {
+   "severity": "medium",
+   "title": "Arbitrary file deletion in administrative interface",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-20-220": {
+   "severity": "medium",
+   "title": "Improper password storage mechanism",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-228": {
+   "severity": "medium",
+   "title": "Insertion of Sensitive Information Into Sent Data Vulnerability in csfd daemon",
+   "results": {
+    "passed": 158
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-490": {
+   "severity": "medium",
+   "title": "OpenSSH Terrapin attack (CVE-2023-48795)",
+   "results": {
+    "passed": 102
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-009": {
+   "severity": "medium",
+   "title": "FortiMail -  SMTP Smuggling",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-439": {
+   "severity": "critical",
+   "title": "Potential Remote_wildcard RADIUS login bypass",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-254": {
+   "severity": "critical",
+   "title": "Stack-based buffer overflow vulnerability in API",
+   "results": {
+    "passed": 81
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-287": {
+   "severity": "medium",
+   "title": "Login mechanism without rate limitation",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-309": {
+   "severity": "medium",
+   "title": "Path traversal vulnerability in CLI",
+   "results": {
+    "passed": 80
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-634": {
+   "severity": "low",
+   "title": "CRLF Header Injection in webmail user GUI",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-331": {
+   "severity": "medium",
+   "title": "Stack buffer overflow in CLI command",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-26-080": {
+   "severity": "low",
+   "title": "Insecure Exposure of Plaintext Passwords in Debug Logs",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-189": {
+   "severity": "high",
+   "title": "Path traversal via unrestricted file upload",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-26-098": {
+   "severity": "high",
+   "title": "Buffer overflow via fgtupdates service",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-032": {
+   "severity": "medium",
+   "title": "FortiOS - Improper authentication in fgfmd",
+   "results": {
+    "passed": 44
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-463": {
+   "severity": "high",
+   "title": "OS Command Injection",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-097": {
+   "severity": "medium",
+   "title": "Arbitrary file deletion in administrative interface",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-135": {
+   "severity": "high",
+   "title": "Missing authentication for managed device configuration files",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-425": {
+   "severity": "high",
+   "title": "OS command injection",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-473": {
+   "severity": "medium",
+   "title": "Arbitrary file overwrite in FGFMd",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-094": {
+   "severity": "low",
+   "title": "Use of Hard-coded Cryptographic Key to encrypt sensitive data",
+   "results": {
+    "passed": 41
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-423": {
+   "severity": "critical",
+   "title": "Missing authentication in fgfmsd",
+   "results": {
+    "passed": 41
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-419": {
+   "severity": "medium",
+   "title": "FortiManager - Code Injection via Jinja Template",
+   "results": {
+    "passed": 23
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-103": {
+   "severity": "high",
+   "title": "Improper access control in backup and restore features",
+   "results": {
+    "passed": 23
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-472": {
+   "severity": "low",
+   "title": "Priviledged admin able to view device summary for device in different ADOM",
+   "results": {
+    "passed": 23
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-239": {
+   "severity": "high",
+   "title": "Admin Account Persistence after Deletion",
+   "results": {
+    "passed": 23
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-21-033": {
+   "severity": "high",
+   "title": "[FortiNDR] OS command injection due to improper input sanitization",
+   "results": {
+    "passed": 41
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-038": {
+   "severity": "high",
+   "title": "Cross-site scripting forgery (CSRF) in HTTPd CLI console",
+   "results": {
+    "passed": 120
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-21-046": {
+   "severity": "medium",
+   "title": "Buffer Underwrite in firmware verification",
+   "results": {
+    "passed": 120
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-21-173": {
+   "severity": "medium",
+   "title": "Buffer overflow in TFTP client library of CLI",
+   "results": {
+    "passed": 120
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-544": {
+   "severity": "medium",
+   "title": "eap-cert-auth bypass via revoked certificate",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-173": {
+   "severity": "medium",
+   "title": "Incorrect Privilege Assignment in Security Fabric",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-224": {
+   "severity": "medium",
+   "title": "Web server ETag exposure",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-756": {
+   "severity": "medium",
+   "title": "Authenticated Heap Overflow in SSL-VPN bookmarks",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-029": {
+   "severity": "critical",
+   "title": "Format String Bug in fgfmd",
+   "results": {
+    "passed": 23
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-423": {
+   "severity": "low",
+   "title": "Weak key derivation for backup file",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-267": {
+   "severity": "low",
+   "title": "Integer Overflow in ipsec ike",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-221": {
+   "severity": "high",
+   "title": "Weak Authentication in csfd daemon",
+   "results": {
+    "passed": 57
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-257": {
+   "severity": "low",
+   "title": "Information Disclosure on SSLVPN endpoint",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-647": {
+   "severity": "critical",
+   "title": "Multiple Fortinet Products' FortiCloud SSO Login Authentication Bypass",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-795": {
+   "severity": "medium",
+   "title": "Format String Vulnerability in CAPWAP fast-failover mode",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-493": {
+   "severity": "high",
+   "title": "Administrator cookie leakage",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-361": {
+   "severity": "high",
+   "title": "Restricted CLI command bypass",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-487": {
+   "severity": "medium",
+   "title": "Insufficient Session Expiration in SSLVPN using SAML authentication",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-632": {
+   "severity": "medium",
+   "title": "Stack buffer overflow in CAPWAP daemon",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-485": {
+   "severity": "medium",
+   "title": "Cross site scripting vulnerability in SSL VPN web UI",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-013": {
+   "severity": "high",
+   "title": "Authorization bypass in SSLVPN bookmarks",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-397": {
+   "severity": "medium",
+   "title": "CVE-2023-44487 - Rapid Reset HTTP/2 vulnerability",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-006": {
+   "severity": "medium",
+   "title": "Privilege escalation in GUI websocket module",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-151": {
+   "severity": "medium",
+   "title": "DOS in headers management",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-120": {
+   "severity": "medium",
+   "title": "Plain-text credentials in GET request via SSL VPN web portal",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-138": {
+   "severity": "high",
+   "title": "Format String Bug in HTTPSd",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-282": {
+   "severity": "medium",
+   "title": "File-Filter Bypass in Explicit Web Proxy Policy",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-511": {
+   "severity": "medium",
+   "title": "PKI via API: Authentication granted with an invalid certificate",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-026": {
+   "severity": "medium",
+   "title": "Heap-based buffer overflow in cw_stad daemon",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-315": {
+   "severity": "high",
+   "title": "Improper authorization for HA requests",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-373": {
+   "severity": "low",
+   "title": "Out-of-bounds Write in IPSEC Daemon",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-266": {
+   "severity": "high",
+   "title": "Out of bounds read in ipsec ike",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-545": {
+   "severity": "low",
+   "title": "Trusted hosts bypass via SSH",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-667": {
+   "severity": "medium",
+   "title": "Request smuggling attack in FortiOS",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-225": {
+   "severity": "medium",
+   "title": "SSL-VPN user IP spoofing",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-137": {
+   "severity": "medium",
+   "title": "Format String Bug in cli command",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-053": {
+   "severity": "medium",
+   "title": "DNS type 65 resource record requests bypass DNS filter",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-012": {
+   "severity": "medium",
+   "title": "Real-time file system integrity checking write protection bypass",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-301": {
+   "severity": "medium",
+   "title": "Fortilink lack of certificate validation",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-250": {
+   "severity": "medium",
+   "title": "Unchecked boundary length causing multiple logic flaws",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-015": {
+   "severity": "critical",
+   "title": "Out-of-bound Write in sslvpnd",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-452": {
+   "severity": "low",
+   "title": "Insertion of Sensitive 2FA Information in logs and debug command",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-413": {
+   "severity": "medium",
+   "title": "FortiOS - Format String in CLI command",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-364": {
+   "severity": "medium",
+   "title": "Integer Overflow on SSL-VPN bookmarks",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-446": {
+   "severity": "low",
+   "title": "FortiOS - IP address validation mishandles zero characters",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-407": {
+   "severity": "medium",
+   "title": "IPsec dynamic assignation IP spoofing",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-546": {
+   "severity": "medium",
+   "title": "Heap buffer overflow in websocket",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-358": {
+   "severity": "medium",
+   "title": "Stack buffer overflow in CAPWAP daemon",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-354": {
+   "severity": "medium",
+   "title": "Stack-based buffer overflow on fortitoken import feature",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-268": {
+   "severity": "medium",
+   "title": "Insertion of sensitive information into REST API logs",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-287": {
+   "severity": "low",
+   "title": "Firewall session injection in FGSP",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-385": {
+   "severity": "medium",
+   "title": "Curl and libcurl CVE-2023-38545 and CVE-2023-38546 vulnerabilities",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-328": {
+   "severity": "critical",
+   "title": "Out-of-bounds Write in captive portal",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-339": {
+   "severity": "medium",
+   "title": "Insufficient Session Expiration in SSL-VPN cookie",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-384": {
+   "severity": "low",
+   "title": "Firewall policy bypass in FSSO Terminal Services Agent",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-261": {
+   "severity": "medium",
+   "title": "FortiOS / FortiProxy / FortiPAM / FortiSwitchManager - Format string vulnerability in CLI commands",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-058": {
+   "severity": "medium",
+   "title": "Weak authentication in security fabric daemon",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-684": {
+   "severity": "medium",
+   "title": "Improper autorization over static files",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-415": {
+   "severity": "medium",
+   "title": "Buffer overflow in administrative interface",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-033": {
+   "severity": "low",
+   "title": "SSLVPN WEB UI Text injection",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-473": {
+   "severity": "medium",
+   "title": "SSLVPN DOS",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-542": {
+   "severity": "medium",
+   "title": "Open Redirect and XSS in Web Filter warning page",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-475": {
+   "severity": "high",
+   "title": "FortiOS - SSLVPN session hijacking using SAML authentication",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-302": {
+   "severity": "high",
+   "title": "Permission escalation due to an Improper Privilege Management",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-084": {
+   "severity": "high",
+   "title": "Heap-based buffer overflow in cw_acd daemon",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-325": {
+   "severity": "high",
+   "title": "Multiple format string vulnerabilities",
+   "results": {
+    "passed": 60
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-385": {
+   "severity": "medium",
+   "title": "Privilege escalation in automation-stitch",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-111": {
+   "severity": "low",
+   "title": "LDAP Clear-text credentials retrievable with IP modification",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-411": {
+   "severity": "medium",
+   "title": "Insufficient Session Expiration in SSLVPN",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-259": {
+   "severity": "high",
+   "title": "Path traversal in csfd daemon",
+   "results": {
+    "passed": 136
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-160": {
+   "severity": "high",
+   "title": "Stack buffer overflow in fabric service",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-036": {
+   "severity": "medium",
+   "title": "Buffer overflow in fgfmd",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-381": {
+   "severity": "low",
+   "title": "Buffer over-read in FGFM",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-471": {
+   "severity": "medium",
+   "title": "FortiOS/FortiProxy - XSS in reboot page",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-326": {
+   "severity": "low",
+   "title": "Exposure of sensitive information in RADIUS Accounting-Request",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-165": {
+   "severity": "medium",
+   "title": "Use of uninitialized resource in SSLVPN websocket",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-209": {
+   "severity": "medium",
+   "title": "Double free in automation-stitch",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-653": {
+   "severity": "low",
+   "title": "Multiple Unchecked Return Value leading to Null Pointer Dereference",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-457": {
+   "severity": "medium",
+   "title": "ZTNA Server Improper Certificate Validation",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-424": {
+   "severity": "medium",
+   "title": "Improper authentication following read-only user login",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-041": {
+   "severity": "medium",
+   "title": "FGFM protocol allows unauthenticated reset of the connection",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-460": {
+   "severity": "high",
+   "title": "Multiple buffer overflows in diag npu command",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-356": {
+   "severity": "medium",
+   "title": "Stack buffer overflow on bluetooth write feature",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-293": {
+   "severity": "medium",
+   "title": "Null pointer dereference leading to sslvpn DOS",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-219": {
+   "severity": "high",
+   "title": "Multipart Form Data Denial of Service",
+   "results": {
+    "passed": 22
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-934": {
+   "severity": "medium",
+   "title": "SSL-VPN Symlink Persistence Patch Bypass",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-435": {
+   "severity": "critical",
+   "title": "Unverified password change via set_password endpoint",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-258": {
+   "severity": "high",
+   "title": "Restricted Shell Escape via Argument Injection",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-260": {
+   "severity": "critical",
+   "title": "Hardcoded Session Secret Leading to Unauthenticated Remote Code Execution",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-001": {
+   "severity": "critical",
+   "title": "Heap buffer underflow in administrative interface",
+   "results": {
+    "passed": 78
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-283": {
+   "severity": "medium",
+   "title": "Undocumented shell command",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-274": {
+   "severity": "high",
+   "title": "Command injection vulnerabilities in GUI and API",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-501": {
+   "severity": "medium",
+   "title": "Authenticated command injection in FortiGuard explicit proxy setting",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-245": {
+   "severity": "medium",
+   "title": "Use of hardcoded password for the mongodb service",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-465": {
+   "severity": "medium",
+   "title": "Password storage in cleartext in DB for external servers",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-244": {
+   "severity": "high",
+   "title": "Telemetry protocol is vulnerable to a MitM Vulnerability",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-237": {
+   "severity": "critical",
+   "title": "Unauthenticated command injection",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-247": {
+   "severity": "medium",
+   "title": "Authenticated command injection in certificate import feature",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-070": {
+   "severity": "high",
+   "title": "Command injection in CLI command",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-345": {
+   "severity": "medium",
+   "title": "Command injection in \"execute restore/backup\" CLI commands",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-362": {
+   "severity": "medium",
+   "title": "Multiple authenticated SQL injection via extraParam",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-282": {
+   "severity": "medium",
+   "title": "IDOR over SIP configuration file",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-20-105": {
+   "severity": "medium",
+   "title": "Unauthenticated user can determine software-version information",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-219": {
+   "severity": "medium",
+   "title": "Path traversal vulnerability in administrative interface",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-304": {
+   "severity": "medium",
+   "title": "OS command injection in CLI",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-220": {
+   "severity": "high",
+   "title": "Blind SQL injection vulnerability",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-111": {
+   "severity": "high",
+   "title": "Heap based overflow in CLI",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-910": {
+   "severity": "critical",
+   "title": "Path confusion vulnerability in GUI",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-136": {
+   "severity": "medium",
+   "title": "Path traversal in API handler",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-131": {
+   "severity": "high",
+   "title": "Command injection in CLI backup functionality",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-448": {
+   "severity": "high",
+   "title": "Authentication bypass via invalid parameter",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-26-093": {
+   "severity": "medium",
+   "title": "Stack buffer overflow in API",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-186": {
+   "severity": "medium",
+   "title": "OS command injection in CLI",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-438": {
+   "severity": "medium",
+   "title": "OS Command Injections",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-26-082": {
+   "severity": "high",
+   "title": "Authentication rate-limit bypass permits to brute force admin logins",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-465": {
+   "severity": "low",
+   "title": "SQL Injection in API EndPoints",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-474": {
+   "severity": "medium",
+   "title": "Unauthorized ADOM operations",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-428": {
+   "severity": "high",
+   "title": "XSS vulnerability in HTML generated attack report files",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-439": {
+   "severity": "medium",
+   "title": "Directory Traversal Arbitrary File Write Vulnerability",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-256": {
+   "severity": "medium",
+   "title": "Log injection",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-140": {
+   "severity": "low",
+   "title": "SQL Injection in delete filter component",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-142": {
+   "severity": "medium",
+   "title": "Path traversal via browse report CGI component",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-151": {
+   "severity": "medium",
+   "title": "Stack based buffer overflow in SAML management",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-184": {
+   "severity": "medium",
+   "title": "Incorrect user management in widgets dashboard",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-118": {
+   "severity": "high",
+   "title": "Multiple Stack based buffer overflow in web interface",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-513": {
+   "severity": "medium",
+   "title": "Multiple OS command injection in API and CLI",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-26-097": {
+   "severity": "medium",
+   "title": "Protected hostname bypass",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-133": {
+   "severity": "medium",
+   "title": "FortiWeb - Multiple OS command injection",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-187": {
+   "severity": "medium",
+   "title": "Format string vulnerability in the CLI",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-254": {
+   "severity": "high",
+   "title": "Command injection in webserver",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-460": {
+   "severity": "medium",
+   "title": "FortiWeb - Unauthorized Configuration Download Vulnerability",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-150": {
+   "severity": "medium",
+   "title": "Command injection in CLI",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-26-088": {
+   "severity": "medium",
+   "title": "OS Command injection in FortiWeb API",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-191": {
+   "severity": "medium",
+   "title": "Read only administrator can see passwords' hashes",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-984": {
+   "severity": "medium",
+   "title": "Capacity to use password hashes instead of password for authentication",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-180": {
+   "severity": "low",
+   "title": "Exposure of password hashes to read-only admin",
+   "results": {
+    "passed": 40
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-250": {
+   "severity": "medium",
+   "title": "Header injection in FortiWeb API",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-348": {
+   "severity": "high",
+   "title": "FortiWeb - Double free in pipe management",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-164": {
+   "severity": "medium",
+   "title": "Buffer overflow in execute backup-local command",
+   "results": {
+    "passed": 38
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-251": {
+   "severity": "medium",
+   "title": "Path traversal in API controller",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-326": {
+   "severity": "medium",
+   "title": "[FortiWeb] Lack of client-side certificate validation when establishing secure connections",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-151": {
+   "severity": "critical",
+   "title": "Unauthenticated SQL injection in GUI",
+   "results": {
+    "passed": 38
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-375": {
+   "severity": "medium",
+   "title": "DoS in firmware upgrade function",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-945": {
+   "severity": "high",
+   "title": "Capacity to forge authentication cookies",
+   "results": {
+    "passed": 38
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-167": {
+   "severity": "medium",
+   "title": "Buffer overflow in CA sign function",
+   "results": {
+    "passed": 38
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-163": {
+   "severity": "high",
+   "title": "OS command injection in Web GUI",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-474": {
+   "severity": "medium",
+   "title": "Directory Traversal",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-26-089": {
+   "severity": "low",
+   "title": "Null Pointer Dereference in Anti-Defacement feature",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-115": {
+   "severity": "medium",
+   "title": "Web application firewall rules bypass by using an empty filename",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-23-068": {
+   "severity": "high",
+   "title": "Insufficient protections against XSS and CSRF",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-22-146": {
+   "severity": "medium",
+   "title": "Relative path traversal in web API",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-843": {
+   "severity": "medium",
+   "title": "Use of hardcoded password for the redis service",
+   "results": {
+    "passed": 39
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-26-137": {
+   "severity": "medium",
+   "title": "DoS due to unsafe function in signal handler",
+   "results": {
+    "passed": 62
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-26-111": {
+   "severity": "medium",
+   "title": "SQL Injection via JSON RPC API",
+   "results": {
+    "passed": 62
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-26-120": {
+   "severity": "medium",
+   "title": "Path Traversal in CLI",
+   "results": {
+    "passed": 63
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-26-132": {
+   "severity": "medium",
+   "title": "SQL command injection in administrative portal",
+   "results": {
+    "passed": 31
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-26-125": {
+   "severity": "medium",
+   "title": "Missing Authentication for critical function in CAPWAP daemon",
+   "results": {
+    "passed": 31
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-26-122": {
+   "severity": "medium",
+   "title": "Path Traversal in CLI",
+   "results": {
+    "passed": 31
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-26-123": {
+   "severity": "high",
+   "title": "Out-of-bounds access in CAPWAP daemon",
+   "results": {
+    "passed": 30
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-26-154": {
+   "severity": "medium",
+   "title": "Buffer overread in authd and wad daemon",
+   "results": {
+    "passed": 30
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-26-108": {
+   "severity": "medium",
+   "title": "Integer Overflow Denial of Service in administrative interface",
+   "results": {
+    "passed": 31
+   },
+   "recommendations": [],
+   "seen_on": [
+    "7.6",
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "TrustedListUsed": {
+   "severity": "medium",
+   "title": "audit_package::check::TrustedListUsed",
+   "results": {
+    "failed": 18
+   },
+   "recommendations": [
+    {
+     "result": "failed",
+     "structure": [
+      {
+       "structure": [
+        {
+         "type": "LabelRecommendationElement",
+         "text": "audit_package::recommendation::TrustedListUsed",
+         "options": {}
+        },
+        {
+         "type": "ListRecommendationElement",
+         "entries": [
+          {
+           "type": "LabelRecommendationElement",
+           "text": "",
+           "options": {}
+          },
+          {
+           "type": "ListRecommendationElement"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "seen_on": [
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "PolicyRecentlyUnused": {
+   "severity": "medium",
+   "title": "audit_package::check::PolicyRecentlyUnused",
+   "results": {
+    "passed": 1
+   },
+   "recommendations": [],
+   "seen_on": [
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "LdapSecureProtocolCheck": {
+   "severity": "high",
+   "title": "audit_package::check::LDAPSecureProtocolCheck",
+   "results": {
+    "passed": 18
+   },
+   "recommendations": [],
+   "seen_on": [
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "FortiguardIoc": {
+   "severity": "medium",
+   "title": "audit_package::check::FortiguardIoc",
+   "results": {
+    "passed": 18
+   },
+   "recommendations": [],
+   "seen_on": [
+    "8.0"
+   ],
+   "kind": "config"
+  },
+  "FG-IR-25-122": {
+   "severity": "medium",
+   "title": "Pre-authentication Denial of Service attack in OpenSSH - CVE-2025-26466",
+   "results": {
+    "passed": 54
+   },
+   "recommendations": [],
+   "seen_on": [
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-472": {
+   "severity": "critical",
+   "title": "TACACS+ authentication bypass",
+   "results": {
+    "passed": 18
+   },
+   "recommendations": [],
+   "seen_on": [
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-24-372": {
+   "severity": "medium",
+   "title": "Domain fronting protection bypass in explicit web proxy",
+   "results": {
+    "passed": 18
+   },
+   "recommendations": [],
+   "seen_on": [
+    "8.0"
+   ],
+   "kind": "psirt"
+  },
+  "FG-IR-25-1052": {
+   "severity": "high",
+   "title": "LDAP authentication bypass in Agentless VPN and FSSO",
+   "results": {
+    "passed": 18
+   },
+   "recommendations": [],
+   "seen_on": [
+    "8.0"
+   ],
+   "kind": "psirt"
+  }
+ },
+ "profiles": {
+  "7.6": {
+   "logver": "0706063652",
+   "source_devid": "FGT90GDEMO000001",
+   "full_runs_observed": 22,
+   "checks_per_run_avg": 432.0,
+   "run_start_utc": [
+    [
+     "06:00",
+     7
+    ],
+    [
+     "14:00",
+     7
+    ],
+    [
+     "22:00",
+     7
+    ]
+   ],
+   "run_span_seconds": [
+    2,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "session_size_max": 60,
+   "multiplicity": {
+    "ActivateFortiCloudService": 1,
+    "AdminPasswordPolicy": 1,
+    "AdminPasswordSecurity": 2,
+    "AdminSportIkeTcpPortConfict": 1,
+    "AuditLogCapacity": 1,
+    "AuditLogSettings": 1,
+    "AuditManagementInterfaces": 1,
+    "AutomaticFortiguardUpdate": 1,
+    "CertificateExpiry": 1,
+    "ClassifyRogueAccesspoints": 1,
+    "DefaultPortHttps": 1,
+    "DefaultPortSsh": 1,
+    "DetectBotnetConnections": 4,
+    "DeviceDiscovery": 1,
+    "DeviceEndOfSupport": 4,
+    "DisableUsernameSensitivity": 1,
+    "DisabledMatchVip": 1,
+    "DnsHelper": 1,
+    "DuplicateFirewallObjects": 1,
+    "EndpointRegistration": 1,
+    "ExpiredApiKeys": 1,
+    "ExpiredAutomationTriggerSchedule": 1,
+    "ExpiredPolicies": 1,
+    "ExpiredSchedule": 1,
+    "FG-IR-19-039": 2,
+    "FG-IR-20-105": 1,
+    "FG-IR-20-220": 1,
+    "FG-IR-21-033": 1,
+    "FG-IR-21-046": 3,
+    "FG-IR-21-071": 1,
+    "FG-IR-21-173": 3,
+    "FG-IR-22-038": 3,
+    "FG-IR-22-070": 1,
+    "FG-IR-22-111": 1,
+    "FG-IR-22-118": 1,
+    "FG-IR-22-120": 1,
+    "FG-IR-22-131": 1,
+    "FG-IR-22-133": 1,
+    "FG-IR-22-136": 1,
+    "FG-IR-22-140": 1,
+    "FG-IR-22-142": 1,
+    "FG-IR-22-146": 1,
+    "FG-IR-22-151": 1,
+    "FG-IR-22-163": 1,
+    "FG-IR-22-164": 1,
+    "FG-IR-22-167": 1,
+    "FG-IR-22-186": 1,
+    "FG-IR-22-187": 1,
+    "FG-IR-22-237": 1,
+    "FG-IR-22-244": 1,
+    "FG-IR-22-245": 1,
+    "FG-IR-22-247": 1,
+    "FG-IR-22-250": 1,
+    "FG-IR-22-251": 1,
+    "FG-IR-22-254": 1,
+    "FG-IR-22-274": 1,
+    "FG-IR-22-283": 1,
+    "FG-IR-22-326": 1,
+    "FG-IR-22-345": 1,
+    "FG-IR-22-348": 1,
+    "FG-IR-22-375": 1,
+    "FG-IR-22-428": 1,
+    "FG-IR-22-432": 1,
+    "FG-IR-22-460": 1,
+    "FG-IR-22-465": 1,
+    "FG-IR-22-501": 1,
+    "FG-IR-23-001": 2,
+    "FG-IR-23-068": 1,
+    "FG-IR-23-103": 1,
+    "FG-IR-23-115": 1,
+    "FG-IR-23-120": 1,
+    "FG-IR-23-137": 1,
+    "FG-IR-23-138": 1,
+    "FG-IR-23-151": 1,
+    "FG-IR-23-165": 1,
+    "FG-IR-23-167": 2,
+    "FG-IR-23-169": 2,
+    "FG-IR-23-177": 2,
+    "FG-IR-23-187": 2,
+    "FG-IR-23-189": 1,
+    "FG-IR-23-191": 1,
+    "FG-IR-23-201": 2,
+    "FG-IR-23-204": 2,
+    "FG-IR-23-209": 1,
+    "FG-IR-23-219": 1,
+    "FG-IR-23-220": 1,
+    "FG-IR-23-221": 2,
+    "FG-IR-23-224": 1,
+    "FG-IR-23-225": 1,
+    "FG-IR-23-256": 1,
+    "FG-IR-23-258": 1,
+    "FG-IR-23-260": 1,
+    "FG-IR-23-261": 1,
+    "FG-IR-23-267": 2,
+    "FG-IR-23-268": 2,
+    "FG-IR-23-282": 1,
+    "FG-IR-23-287": 1,
+    "FG-IR-23-293": 1,
+    "FG-IR-23-301": 1,
+    "FG-IR-23-304": 2,
+    "FG-IR-23-315": 1,
+    "FG-IR-23-328": 1,
+    "FG-IR-23-354": 1,
+    "FG-IR-23-356": 1,
+    "FG-IR-23-385": 1,
+    "FG-IR-23-396": 2,
+    "FG-IR-23-397": 1,
+    "FG-IR-23-407": 1,
+    "FG-IR-23-413": 1,
+    "FG-IR-23-415": 1,
+    "FG-IR-23-419": 1,
+    "FG-IR-23-423": 1,
+    "FG-IR-23-424": 1,
+    "FG-IR-23-439": 1,
+    "FG-IR-23-446": 1,
+    "FG-IR-23-460": 1,
+    "FG-IR-23-467": 2,
+    "FG-IR-23-471": 1,
+    "FG-IR-23-472": 1,
+    "FG-IR-23-473": 1,
+    "FG-IR-23-474": 1,
+    "FG-IR-23-475": 1,
+    "FG-IR-23-485": 1,
+    "FG-IR-23-490": 3,
+    "FG-IR-23-493": 1,
+    "FG-IR-23-494": 6,
+    "FG-IR-24-009": 1,
+    "FG-IR-24-010": 1,
+    "FG-IR-24-012": 1,
+    "FG-IR-24-013": 1,
+    "FG-IR-24-015": 1,
+    "FG-IR-24-029": 1,
+    "FG-IR-24-032": 2,
+    "FG-IR-24-033": 1,
+    "FG-IR-24-036": 1,
+    "FG-IR-24-041": 1,
+    "FG-IR-24-046": 4,
+    "FG-IR-24-053": 1,
+    "FG-IR-24-058": 1,
+    "FG-IR-24-091": 2,
+    "FG-IR-24-094": 1,
+    "FG-IR-24-097": 1,
+    "FG-IR-24-098": 2,
+    "FG-IR-24-099": 2,
+    "FG-IR-24-106": 2,
+    "FG-IR-24-111": 1,
+    "FG-IR-24-115": 2,
+    "FG-IR-24-116": 2,
+    "FG-IR-24-124": 2,
+    "FG-IR-24-125": 2,
+    "FG-IR-24-127": 2,
+    "FG-IR-24-130": 2,
+    "FG-IR-24-133": 2,
+    "FG-IR-24-135": 1,
+    "FG-IR-24-143": 2,
+    "FG-IR-24-147": 2,
+    "FG-IR-24-152": 2,
+    "FG-IR-24-160": 1,
+    "FG-IR-24-165": 2,
+    "FG-IR-24-179": 2,
+    "FG-IR-24-180": 1,
+    "FG-IR-24-184": 1,
+    "FG-IR-24-196": 1,
+    "FG-IR-24-219": 1,
+    "FG-IR-24-220": 2,
+    "FG-IR-24-221": 1,
+    "FG-IR-24-228": 4,
+    "FG-IR-24-239": 1,
+    "FG-IR-24-250": 1,
+    "FG-IR-24-255": 5,
+    "FG-IR-24-257": 1,
+    "FG-IR-24-258": 3,
+    "FG-IR-24-259": 3,
+    "FG-IR-24-266": 1,
+    "FG-IR-24-267": 1,
+    "FG-IR-24-268": 1,
+    "FG-IR-24-282": 1,
+    "FG-IR-24-287": 1,
+    "FG-IR-24-302": 1,
+    "FG-IR-24-304": 1,
+    "FG-IR-24-309": 2,
+    "FG-IR-24-311": 2,
+    "FG-IR-24-325": 2,
+    "FG-IR-24-326": 1,
+    "FG-IR-24-331": 1,
+    "FG-IR-24-339": 1,
+    "FG-IR-24-361": 1,
+    "FG-IR-24-364": 1,
+    "FG-IR-24-373": 1,
+    "FG-IR-24-381": 1,
+    "FG-IR-24-385": 1,
+    "FG-IR-24-422": 1,
+    "FG-IR-24-423": 1,
+    "FG-IR-24-425": 1,
+    "FG-IR-24-435": 1,
+    "FG-IR-24-437": 2,
+    "FG-IR-24-438": 1,
+    "FG-IR-24-439": 1,
+    "FG-IR-24-442": 3,
+    "FG-IR-24-452": 1,
+    "FG-IR-24-453": 2,
+    "FG-IR-24-457": 1,
+    "FG-IR-24-463": 1,
+    "FG-IR-24-465": 1,
+    "FG-IR-24-473": 1,
+    "FG-IR-24-474": 1,
+    "FG-IR-24-487": 1,
+    "FG-IR-24-511": 1,
+    "FG-IR-24-542": 1,
+    "FG-IR-24-544": 1,
+    "FG-IR-24-546": 1,
+    "FG-IR-25-006": 1,
+    "FG-IR-25-026": 1,
+    "FG-IR-25-084": 1,
+    "FG-IR-25-150": 1,
+    "FG-IR-25-151": 1,
+    "FG-IR-25-173": 1,
+    "FG-IR-25-198": 1,
+    "FG-IR-25-254": 2,
+    "FG-IR-25-358": 1,
+    "FG-IR-25-362": 1,
+    "FG-IR-25-378": 1,
+    "FG-IR-25-384": 1,
+    "FG-IR-25-411": 1,
+    "FG-IR-25-448": 1,
+    "FG-IR-25-513": 1,
+    "FG-IR-25-545": 1,
+    "FG-IR-25-632": 1,
+    "FG-IR-25-634": 1,
+    "FG-IR-25-647": 1,
+    "FG-IR-25-653": 1,
+    "FG-IR-25-667": 1,
+    "FG-IR-25-684": 1,
+    "FG-IR-25-756": 1,
+    "FG-IR-25-795": 1,
+    "FG-IR-25-843": 1,
+    "FG-IR-25-910": 1,
+    "FG-IR-25-934": 1,
+    "FG-IR-25-945": 1,
+    "FG-IR-25-984": 1,
+    "FG-IR-26-060": 3,
+    "FG-IR-26-078": 2,
+    "FG-IR-26-079": 2,
+    "FG-IR-26-080": 1,
+    "FG-IR-26-081": 2,
+    "FG-IR-26-082": 1,
+    "FG-IR-26-088": 1,
+    "FG-IR-26-089": 1,
+    "FG-IR-26-090": 2,
+    "FG-IR-26-092": 2,
+    "FG-IR-26-093": 1,
+    "FG-IR-26-094": 1,
+    "FG-IR-26-095": 1,
+    "FG-IR-26-097": 1,
+    "FG-IR-26-098": 1,
+    "FG-IR-26-108": 1,
+    "FG-IR-26-111": 2,
+    "FG-IR-26-120": 2,
+    "FG-IR-26-122": 1,
+    "FG-IR-26-123": 1,
+    "FG-IR-26-125": 1,
+    "FG-IR-26-132": 1,
+    "FG-IR-26-137": 2,
+    "FG-IR-26-154": 1,
+    "FortiAnalyzerConnection": 1,
+    "FortiApAuthorized": 2,
+    "FortiApUtmSsid": 2,
+    "FortiApVersions": 2,
+    "FortiCareRegistered": 4,
+    "FortiClientVulnerabilities": 1,
+    "FortiExtenderAuthorized": 1,
+    "FortiExtenderPdnInterfaceMisconfiguration": 1,
+    "FortiSandboxConfigured": 2,
+    "FortiSandboxConnection": 1,
+    "FortiSwitchAuthorized": 1,
+    "FortiSwitchBiosUpgrade": 1,
+    "FortiSwitchFortiLinkRedundancy": 1,
+    "FortiSwitchIslLockdown": 1,
+    "FortiSwitchIslRedundancy": 1,
+    "FortiSwitchLockdownLldpProfile": 4,
+    "FortiSwitchPortSpeed": 1,
+    "FortiSwitchQuarantineBouncePort": 1,
+    "FortiSwitchStp": 2,
+    "FortiSwitchVersions": 1,
+    "ForticareMultipleAccounts": 1,
+    "FortigateIdentification": 1,
+    "FortiguardAntiSpam": 1,
+    "FortiguardAntiVirus": 1,
+    "FortiguardFiltering": 1,
+    "FortiguardFirmwareGeneralUpdates": 1,
+    "FortiguardIndustrialDb": 1,
+    "FortiguardIotDetection": 1,
+    "FortiguardIotVulnerability": 1,
+    "FortiguardIps": 1,
+    "FortiguardOutbreakPrevention": 1,
+    "FortiguardSecurityRating": 1,
+    "FortiguardWebFiltering": 1,
+    "FortilinkCapacity": 1,
+    "IdleTimeout": 1,
+    "InterfaceClassification": 1,
+    "IpPoolExhaust": 1,
+    "LanSegmentServers": 1,
+    "LdapServerIdentityCheck": 1,
+    "LocalLogDisk": 1,
+    "LoggingReporting": 1,
+    "LoginAttempts": 1,
+    "MclagTier1Candidate": 1,
+    "MclagTierPlusCandidate": 1,
+    "NtpServers": 1,
+    "PhaseOneInterfaceDiffieHellmanGroup": 1,
+    "PhaseOneInterfaceIke": 1,
+    "PhaseOneInterfaceProposal": 1,
+    "PhaseTwoInterfaceDiffieHellmanGroup": 1,
+    "PhaseTwoInterfaceProposal": 1,
+    "PolicyActiveInterface": 1,
+    "PolicyExplicitInterfaces": 1,
+    "PolicyInspectionMode": 1,
+    "PolicyNoInspectionWithUtm": 1,
+    "PolicyStatsOversize": 1,
+    "PolicyUniqueNames": 1,
+    "PsepsePortConnection": 1,
+    "RogueApDetection": 1,
+    "SecureWirelessConnections": 1,
+    "SnmpPolling": 1,
+    "SsidInsecureProtocols": 1,
+    "SystemUptime": 4,
+    "ThirdPartyRouter": 1,
+    "TrustedHosts": 1,
+    "TwoFactorAuthentication": 1,
+    "TwoFactorAuthenticationVpnUsers": 1,
+    "UnresolvedDynamicSdn": 1,
+    "UnresolvedFqdn": 1,
+    "UnsecureProtocolHttp": 2,
+    "UnsecureProtocolTelnet": 2,
+    "UsbAutoConfig": 1,
+    "ValidCertificateHttpServer": 1,
+    "ValidCertificateIpsec": 1,
+    "ValidCertificateSslvpn": 1,
+    "VipOverlap": 1,
+    "VlanManagement": 1,
+    "VlanMissingPolicies": 1,
+    "WanManagementAccess": 1,
+    "WidsSignatures": 1
+   },
+   "present_in_runs": {
+    "ActivateFortiCloudService": 0.95,
+    "AdminPasswordPolicy": 0.95,
+    "AdminPasswordSecurity": 0.95,
+    "AdminSportIkeTcpPortConfict": 0.95,
+    "AuditLogCapacity": 0.95,
+    "AuditLogSettings": 0.95,
+    "AuditManagementInterfaces": 0.95,
+    "AutomaticFortiguardUpdate": 0.95,
+    "CertificateExpiry": 0.95,
+    "ClassifyRogueAccesspoints": 0.95,
+    "DefaultPortHttps": 0.95,
+    "DefaultPortSsh": 0.95,
+    "DetectBotnetConnections": 0.95,
+    "DeviceDiscovery": 0.95,
+    "DeviceEndOfSupport": 0.95,
+    "DisableUsernameSensitivity": 0.95,
+    "DisabledMatchVip": 0.95,
+    "DnsHelper": 0.95,
+    "DuplicateFirewallObjects": 0.95,
+    "EndpointRegistration": 0.95,
+    "ExpiredApiKeys": 0.95,
+    "ExpiredAutomationTriggerSchedule": 0.95,
+    "ExpiredPolicies": 0.95,
+    "ExpiredSchedule": 0.95,
+    "FG-IR-19-039": 1.0,
+    "FG-IR-20-105": 1.0,
+    "FG-IR-20-220": 1.0,
+    "FG-IR-21-033": 1.0,
+    "FG-IR-21-046": 1.0,
+    "FG-IR-21-071": 1.0,
+    "FG-IR-21-173": 1.0,
+    "FG-IR-22-038": 1.0,
+    "FG-IR-22-070": 1.0,
+    "FG-IR-22-111": 1.0,
+    "FG-IR-22-118": 1.0,
+    "FG-IR-22-120": 1.0,
+    "FG-IR-22-131": 1.0,
+    "FG-IR-22-133": 1.0,
+    "FG-IR-22-136": 1.0,
+    "FG-IR-22-140": 1.0,
+    "FG-IR-22-142": 1.0,
+    "FG-IR-22-146": 1.0,
+    "FG-IR-22-151": 1.0,
+    "FG-IR-22-163": 1.0,
+    "FG-IR-22-164": 1.0,
+    "FG-IR-22-167": 1.0,
+    "FG-IR-22-186": 1.0,
+    "FG-IR-22-187": 1.0,
+    "FG-IR-22-237": 1.0,
+    "FG-IR-22-244": 1.0,
+    "FG-IR-22-245": 1.0,
+    "FG-IR-22-247": 1.0,
+    "FG-IR-22-250": 1.0,
+    "FG-IR-22-251": 1.0,
+    "FG-IR-22-254": 1.0,
+    "FG-IR-22-274": 1.0,
+    "FG-IR-22-283": 1.0,
+    "FG-IR-22-326": 1.0,
+    "FG-IR-22-345": 1.0,
+    "FG-IR-22-348": 1.0,
+    "FG-IR-22-375": 1.0,
+    "FG-IR-22-428": 1.0,
+    "FG-IR-22-432": 1.0,
+    "FG-IR-22-460": 1.0,
+    "FG-IR-22-465": 1.0,
+    "FG-IR-22-501": 1.0,
+    "FG-IR-23-001": 1.0,
+    "FG-IR-23-068": 1.0,
+    "FG-IR-23-103": 1.0,
+    "FG-IR-23-115": 1.0,
+    "FG-IR-23-120": 1.0,
+    "FG-IR-23-137": 1.0,
+    "FG-IR-23-138": 1.0,
+    "FG-IR-23-151": 1.0,
+    "FG-IR-23-165": 1.0,
+    "FG-IR-23-167": 1.0,
+    "FG-IR-23-169": 1.0,
+    "FG-IR-23-177": 1.0,
+    "FG-IR-23-187": 1.0,
+    "FG-IR-23-189": 1.0,
+    "FG-IR-23-191": 1.0,
+    "FG-IR-23-201": 1.0,
+    "FG-IR-23-204": 1.0,
+    "FG-IR-23-209": 1.0,
+    "FG-IR-23-219": 1.0,
+    "FG-IR-23-220": 1.0,
+    "FG-IR-23-221": 1.0,
+    "FG-IR-23-224": 1.0,
+    "FG-IR-23-225": 1.0,
+    "FG-IR-23-256": 1.0,
+    "FG-IR-23-258": 1.0,
+    "FG-IR-23-260": 1.0,
+    "FG-IR-23-261": 1.0,
+    "FG-IR-23-267": 1.0,
+    "FG-IR-23-268": 1.0,
+    "FG-IR-23-282": 1.0,
+    "FG-IR-23-287": 1.0,
+    "FG-IR-23-293": 1.0,
+    "FG-IR-23-301": 1.0,
+    "FG-IR-23-304": 1.0,
+    "FG-IR-23-315": 1.0,
+    "FG-IR-23-328": 1.0,
+    "FG-IR-23-354": 1.0,
+    "FG-IR-23-356": 1.0,
+    "FG-IR-23-385": 1.0,
+    "FG-IR-23-396": 1.0,
+    "FG-IR-23-397": 1.0,
+    "FG-IR-23-407": 1.0,
+    "FG-IR-23-413": 1.0,
+    "FG-IR-23-415": 1.0,
+    "FG-IR-23-419": 1.0,
+    "FG-IR-23-423": 1.0,
+    "FG-IR-23-424": 1.0,
+    "FG-IR-23-439": 1.0,
+    "FG-IR-23-446": 1.0,
+    "FG-IR-23-460": 1.0,
+    "FG-IR-23-467": 1.0,
+    "FG-IR-23-471": 1.0,
+    "FG-IR-23-472": 1.0,
+    "FG-IR-23-473": 1.0,
+    "FG-IR-23-474": 1.0,
+    "FG-IR-23-475": 1.0,
+    "FG-IR-23-485": 1.0,
+    "FG-IR-23-490": 1.0,
+    "FG-IR-23-493": 1.0,
+    "FG-IR-23-494": 1.0,
+    "FG-IR-24-009": 1.0,
+    "FG-IR-24-010": 1.0,
+    "FG-IR-24-012": 1.0,
+    "FG-IR-24-013": 1.0,
+    "FG-IR-24-015": 1.0,
+    "FG-IR-24-029": 1.0,
+    "FG-IR-24-032": 1.0,
+    "FG-IR-24-033": 1.0,
+    "FG-IR-24-036": 1.0,
+    "FG-IR-24-041": 1.0,
+    "FG-IR-24-046": 1.0,
+    "FG-IR-24-053": 1.0,
+    "FG-IR-24-058": 1.0,
+    "FG-IR-24-091": 1.0,
+    "FG-IR-24-094": 1.0,
+    "FG-IR-24-097": 1.0,
+    "FG-IR-24-098": 1.0,
+    "FG-IR-24-099": 1.0,
+    "FG-IR-24-106": 1.0,
+    "FG-IR-24-111": 1.0,
+    "FG-IR-24-115": 1.0,
+    "FG-IR-24-116": 1.0,
+    "FG-IR-24-124": 1.0,
+    "FG-IR-24-125": 1.0,
+    "FG-IR-24-127": 1.0,
+    "FG-IR-24-130": 1.0,
+    "FG-IR-24-133": 1.0,
+    "FG-IR-24-135": 1.0,
+    "FG-IR-24-143": 1.0,
+    "FG-IR-24-147": 1.0,
+    "FG-IR-24-152": 1.0,
+    "FG-IR-24-160": 1.0,
+    "FG-IR-24-165": 1.0,
+    "FG-IR-24-179": 1.0,
+    "FG-IR-24-180": 1.0,
+    "FG-IR-24-184": 1.0,
+    "FG-IR-24-196": 1.0,
+    "FG-IR-24-219": 1.0,
+    "FG-IR-24-220": 1.0,
+    "FG-IR-24-221": 1.0,
+    "FG-IR-24-228": 1.0,
+    "FG-IR-24-239": 1.0,
+    "FG-IR-24-250": 1.0,
+    "FG-IR-24-255": 1.0,
+    "FG-IR-24-257": 1.0,
+    "FG-IR-24-258": 1.0,
+    "FG-IR-24-259": 1.0,
+    "FG-IR-24-266": 1.0,
+    "FG-IR-24-267": 1.0,
+    "FG-IR-24-268": 1.0,
+    "FG-IR-24-282": 1.0,
+    "FG-IR-24-287": 1.0,
+    "FG-IR-24-302": 1.0,
+    "FG-IR-24-304": 1.0,
+    "FG-IR-24-309": 1.0,
+    "FG-IR-24-311": 1.0,
+    "FG-IR-24-325": 1.0,
+    "FG-IR-24-326": 1.0,
+    "FG-IR-24-331": 1.0,
+    "FG-IR-24-339": 1.0,
+    "FG-IR-24-361": 1.0,
+    "FG-IR-24-364": 1.0,
+    "FG-IR-24-373": 1.0,
+    "FG-IR-24-381": 1.0,
+    "FG-IR-24-385": 1.0,
+    "FG-IR-24-422": 1.0,
+    "FG-IR-24-423": 1.0,
+    "FG-IR-24-425": 1.0,
+    "FG-IR-24-435": 1.0,
+    "FG-IR-24-437": 1.0,
+    "FG-IR-24-438": 1.0,
+    "FG-IR-24-439": 1.0,
+    "FG-IR-24-442": 1.0,
+    "FG-IR-24-452": 1.0,
+    "FG-IR-24-453": 1.0,
+    "FG-IR-24-457": 1.0,
+    "FG-IR-24-463": 1.0,
+    "FG-IR-24-465": 1.0,
+    "FG-IR-24-473": 1.0,
+    "FG-IR-24-474": 1.0,
+    "FG-IR-24-487": 1.0,
+    "FG-IR-24-511": 1.0,
+    "FG-IR-24-542": 1.0,
+    "FG-IR-24-544": 1.0,
+    "FG-IR-24-546": 1.0,
+    "FG-IR-25-006": 1.0,
+    "FG-IR-25-026": 1.0,
+    "FG-IR-25-084": 1.0,
+    "FG-IR-25-150": 1.0,
+    "FG-IR-25-151": 1.0,
+    "FG-IR-25-173": 1.0,
+    "FG-IR-25-198": 1.0,
+    "FG-IR-25-254": 1.0,
+    "FG-IR-25-358": 1.0,
+    "FG-IR-25-362": 1.0,
+    "FG-IR-25-378": 1.0,
+    "FG-IR-25-384": 1.0,
+    "FG-IR-25-411": 1.0,
+    "FG-IR-25-448": 1.0,
+    "FG-IR-25-513": 1.0,
+    "FG-IR-25-545": 1.0,
+    "FG-IR-25-632": 1.0,
+    "FG-IR-25-634": 1.0,
+    "FG-IR-25-647": 1.0,
+    "FG-IR-25-653": 1.0,
+    "FG-IR-25-667": 1.0,
+    "FG-IR-25-684": 1.0,
+    "FG-IR-25-756": 1.0,
+    "FG-IR-25-795": 1.0,
+    "FG-IR-25-843": 1.0,
+    "FG-IR-25-910": 1.0,
+    "FG-IR-25-934": 1.0,
+    "FG-IR-25-945": 1.0,
+    "FG-IR-25-984": 1.0,
+    "FG-IR-26-060": 1.0,
+    "FG-IR-26-078": 1.0,
+    "FG-IR-26-079": 1.0,
+    "FG-IR-26-080": 1.0,
+    "FG-IR-26-081": 1.0,
+    "FG-IR-26-082": 1.0,
+    "FG-IR-26-088": 1.0,
+    "FG-IR-26-089": 1.0,
+    "FG-IR-26-090": 1.0,
+    "FG-IR-26-092": 1.0,
+    "FG-IR-26-093": 1.0,
+    "FG-IR-26-094": 1.0,
+    "FG-IR-26-095": 1.0,
+    "FG-IR-26-097": 1.0,
+    "FG-IR-26-098": 1.0,
+    "FG-IR-26-108": 0.59,
+    "FG-IR-26-111": 0.59,
+    "FG-IR-26-120": 0.59,
+    "FG-IR-26-122": 0.59,
+    "FG-IR-26-123": 0.59,
+    "FG-IR-26-125": 0.59,
+    "FG-IR-26-132": 0.59,
+    "FG-IR-26-137": 0.59,
+    "FG-IR-26-154": 0.59,
+    "FortiAnalyzerConnection": 0.95,
+    "FortiApAuthorized": 0.95,
+    "FortiApUtmSsid": 0.95,
+    "FortiApVersions": 0.95,
+    "FortiCareRegistered": 0.95,
+    "FortiClientVulnerabilities": 0.95,
+    "FortiExtenderAuthorized": 0.95,
+    "FortiExtenderPdnInterfaceMisconfiguration": 0.95,
+    "FortiSandboxConfigured": 0.95,
+    "FortiSandboxConnection": 0.95,
+    "FortiSwitchAuthorized": 0.95,
+    "FortiSwitchBiosUpgrade": 0.95,
+    "FortiSwitchFortiLinkRedundancy": 0.95,
+    "FortiSwitchIslLockdown": 0.95,
+    "FortiSwitchIslRedundancy": 0.95,
+    "FortiSwitchLockdownLldpProfile": 0.95,
+    "FortiSwitchPortSpeed": 0.95,
+    "FortiSwitchQuarantineBouncePort": 0.95,
+    "FortiSwitchStp": 0.95,
+    "FortiSwitchVersions": 0.82,
+    "ForticareMultipleAccounts": 0.95,
+    "FortigateIdentification": 0.95,
+    "FortiguardAntiSpam": 0.95,
+    "FortiguardAntiVirus": 0.95,
+    "FortiguardFiltering": 0.95,
+    "FortiguardFirmwareGeneralUpdates": 0.95,
+    "FortiguardIndustrialDb": 0.95,
+    "FortiguardIotDetection": 0.95,
+    "FortiguardIotVulnerability": 0.95,
+    "FortiguardIps": 0.95,
+    "FortiguardOutbreakPrevention": 0.95,
+    "FortiguardSecurityRating": 0.95,
+    "FortiguardWebFiltering": 0.95,
+    "FortilinkCapacity": 0.95,
+    "IdleTimeout": 0.95,
+    "InterfaceClassification": 0.95,
+    "IpPoolExhaust": 0.95,
+    "LanSegmentServers": 0.95,
+    "LdapServerIdentityCheck": 0.95,
+    "LocalLogDisk": 0.95,
+    "LoggingReporting": 0.95,
+    "LoginAttempts": 0.95,
+    "MclagTier1Candidate": 0.95,
+    "MclagTierPlusCandidate": 0.95,
+    "NtpServers": 0.95,
+    "PhaseOneInterfaceDiffieHellmanGroup": 0.95,
+    "PhaseOneInterfaceIke": 0.95,
+    "PhaseOneInterfaceProposal": 0.95,
+    "PhaseTwoInterfaceDiffieHellmanGroup": 0.95,
+    "PhaseTwoInterfaceProposal": 0.95,
+    "PolicyActiveInterface": 0.95,
+    "PolicyExplicitInterfaces": 0.95,
+    "PolicyInspectionMode": 0.95,
+    "PolicyNoInspectionWithUtm": 0.95,
+    "PolicyStatsOversize": 0.95,
+    "PolicyUniqueNames": 0.95,
+    "PsepsePortConnection": 0.95,
+    "RogueApDetection": 0.95,
+    "SecureWirelessConnections": 0.95,
+    "SnmpPolling": 0.95,
+    "SsidInsecureProtocols": 0.95,
+    "SystemUptime": 0.95,
+    "ThirdPartyRouter": 0.95,
+    "TrustedHosts": 0.95,
+    "TwoFactorAuthentication": 0.95,
+    "TwoFactorAuthenticationVpnUsers": 0.95,
+    "UnresolvedDynamicSdn": 0.95,
+    "UnresolvedFqdn": 0.95,
+    "UnsecureProtocolHttp": 0.95,
+    "UnsecureProtocolTelnet": 0.95,
+    "UsbAutoConfig": 0.95,
+    "ValidCertificateHttpServer": 0.95,
+    "ValidCertificateIpsec": 0.95,
+    "ValidCertificateSslvpn": 0.95,
+    "VipOverlap": 0.95,
+    "VlanManagement": 0.95,
+    "VlanMissingPolicies": 0.95,
+    "WanManagementAccess": 0.95,
+    "WidsSignatures": 0.95
+   },
+   "partial_run_groups": [
+    {
+     "checks": [
+      "AuditLogSettings",
+      "DetectBotnetConnections",
+      "DisabledMatchVip",
+      "ExpiredPolicies",
+      "InterfaceClassification",
+      "PolicyActiveInterface",
+      "PolicyExplicitInterfaces",
+      "PolicyInspectionMode",
+      "PolicyNoInspectionWithUtm",
+      "PolicyStatsOversize",
+      "PolicyUniqueNames",
+      "UnsecureProtocolHttp",
+      "UnsecureProtocolTelnet",
+      "ValidCertificateSslvpn",
+      "VlanMissingPolicies"
+     ],
+     "seen": 8
+    },
+    {
+     "checks": [
+      "FortiAnalyzerConnection"
+     ],
+     "seen": 5
+    },
+    {
+     "checks": [
+      "AuditLogSettings",
+      "DetectBotnetConnections",
+      "DisabledMatchVip",
+      "DuplicateFirewallObjects",
+      "ExpiredPolicies",
+      "InterfaceClassification",
+      "PolicyActiveInterface",
+      "PolicyExplicitInterfaces",
+      "PolicyInspectionMode",
+      "PolicyNoInspectionWithUtm",
+      "PolicyStatsOversize",
+      "PolicyUniqueNames",
+      "UnsecureProtocolHttp",
+      "UnsecureProtocolTelnet",
+      "ValidCertificateSslvpn",
+      "VlanMissingPolicies"
+     ],
+     "seen": 1
+    }
+   ]
+  },
+  "8.0": {
+   "logver": "0800000167",
+   "source_devid": "FGVMEVDEMO0000099",
+   "full_runs_observed": 18,
+   "checks_per_run_avg": 311.4,
+   "run_start_utc": [
+    [
+     "14:00",
+     6
+    ],
+    [
+     "22:00",
+     6
+    ],
+    [
+     "06:00",
+     5
+    ]
+   ],
+   "run_span_seconds": [
+    2,
+    4,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+   ],
+   "session_size_max": 60,
+   "multiplicity": {
+    "ActivateFortiCloudService": 1,
+    "AdminPasswordPolicy": 2,
+    "AdminPasswordSecurity": 6,
+    "AdminSportIkeTcpPortConfict": 1,
+    "AuditLogCapacity": 1,
+    "AuditLogSettings": 1,
+    "AuditManagementInterfaces": 1,
+    "AutomaticFortiguardUpdate": 1,
+    "CertificateExpiry": 1,
+    "ClassifyRogueAccesspoints": 1,
+    "DefaultPortHttps": 2,
+    "DefaultPortSsh": 1,
+    "DetectBotnetConnections": 4,
+    "DeviceDiscovery": 1,
+    "DeviceEndOfSupport": 1,
+    "DisableUsernameSensitivity": 1,
+    "DisabledMatchVip": 1,
+    "DnsHelper": 1,
+    "DuplicateFirewallObjects": 1,
+    "EndpointRegistration": 1,
+    "ExpiredApiKeys": 1,
+    "ExpiredAutomationTriggerSchedule": 1,
+    "ExpiredPolicies": 1,
+    "ExpiredSchedule": 1,
+    "FG-IR-20-105": 1,
+    "FG-IR-20-220": 1,
+    "FG-IR-21-033": 1,
+    "FG-IR-21-046": 3,
+    "FG-IR-21-071": 1,
+    "FG-IR-21-173": 3,
+    "FG-IR-22-038": 3,
+    "FG-IR-22-070": 1,
+    "FG-IR-22-111": 1,
+    "FG-IR-22-118": 1,
+    "FG-IR-22-120": 1,
+    "FG-IR-22-131": 1,
+    "FG-IR-22-133": 1,
+    "FG-IR-22-136": 1,
+    "FG-IR-22-140": 1,
+    "FG-IR-22-142": 1,
+    "FG-IR-22-146": 1,
+    "FG-IR-22-151": 1,
+    "FG-IR-22-163": 1,
+    "FG-IR-22-164": 1,
+    "FG-IR-22-167": 1,
+    "FG-IR-22-186": 1,
+    "FG-IR-22-187": 1,
+    "FG-IR-22-237": 1,
+    "FG-IR-22-244": 1,
+    "FG-IR-22-245": 1,
+    "FG-IR-22-247": 1,
+    "FG-IR-22-250": 1,
+    "FG-IR-22-251": 1,
+    "FG-IR-22-254": 1,
+    "FG-IR-22-274": 1,
+    "FG-IR-22-283": 1,
+    "FG-IR-22-326": 1,
+    "FG-IR-22-345": 1,
+    "FG-IR-22-348": 1,
+    "FG-IR-22-375": 1,
+    "FG-IR-22-428": 1,
+    "FG-IR-22-460": 1,
+    "FG-IR-22-465": 1,
+    "FG-IR-22-501": 1,
+    "FG-IR-23-001": 2,
+    "FG-IR-23-068": 1,
+    "FG-IR-23-103": 1,
+    "FG-IR-23-115": 1,
+    "FG-IR-23-169": 1,
+    "FG-IR-23-177": 1,
+    "FG-IR-23-191": 1,
+    "FG-IR-23-204": 1,
+    "FG-IR-23-219": 1,
+    "FG-IR-23-220": 1,
+    "FG-IR-23-256": 1,
+    "FG-IR-23-258": 1,
+    "FG-IR-23-260": 1,
+    "FG-IR-23-267": 1,
+    "FG-IR-23-282": 1,
+    "FG-IR-23-396": 1,
+    "FG-IR-23-419": 1,
+    "FG-IR-23-472": 1,
+    "FG-IR-23-474": 1,
+    "FG-IR-23-490": 2,
+    "FG-IR-23-494": 4,
+    "FG-IR-24-010": 1,
+    "FG-IR-24-029": 1,
+    "FG-IR-24-046": 1,
+    "FG-IR-24-053": 1,
+    "FG-IR-24-091": 1,
+    "FG-IR-24-094": 1,
+    "FG-IR-24-098": 1,
+    "FG-IR-24-099": 1,
+    "FG-IR-24-106": 1,
+    "FG-IR-24-116": 1,
+    "FG-IR-24-124": 1,
+    "FG-IR-24-127": 1,
+    "FG-IR-24-130": 1,
+    "FG-IR-24-133": 1,
+    "FG-IR-24-143": 1,
+    "FG-IR-24-147": 1,
+    "FG-IR-24-165": 1,
+    "FG-IR-24-180": 1,
+    "FG-IR-24-184": 1,
+    "FG-IR-24-221": 2,
+    "FG-IR-24-228": 4,
+    "FG-IR-24-239": 1,
+    "FG-IR-24-250": 1,
+    "FG-IR-24-255": 5,
+    "FG-IR-24-257": 1,
+    "FG-IR-24-259": 4,
+    "FG-IR-24-266": 1,
+    "FG-IR-24-282": 1,
+    "FG-IR-24-287": 1,
+    "FG-IR-24-302": 1,
+    "FG-IR-24-304": 1,
+    "FG-IR-24-309": 2,
+    "FG-IR-24-325": 1,
+    "FG-IR-24-326": 1,
+    "FG-IR-24-331": 1,
+    "FG-IR-24-339": 1,
+    "FG-IR-24-361": 1,
+    "FG-IR-24-364": 1,
+    "FG-IR-24-372": 1,
+    "FG-IR-24-373": 1,
+    "FG-IR-24-422": 1,
+    "FG-IR-24-423": 1,
+    "FG-IR-24-425": 1,
+    "FG-IR-24-435": 1,
+    "FG-IR-24-437": 2,
+    "FG-IR-24-438": 1,
+    "FG-IR-24-439": 1,
+    "FG-IR-24-442": 3,
+    "FG-IR-24-452": 1,
+    "FG-IR-24-453": 2,
+    "FG-IR-24-457": 1,
+    "FG-IR-24-463": 1,
+    "FG-IR-24-465": 1,
+    "FG-IR-24-472": 1,
+    "FG-IR-24-473": 1,
+    "FG-IR-24-474": 1,
+    "FG-IR-24-487": 1,
+    "FG-IR-24-511": 1,
+    "FG-IR-24-542": 1,
+    "FG-IR-24-544": 1,
+    "FG-IR-24-546": 1,
+    "FG-IR-25-006": 1,
+    "FG-IR-25-026": 1,
+    "FG-IR-25-084": 1,
+    "FG-IR-25-1052": 1,
+    "FG-IR-25-122": 3,
+    "FG-IR-25-150": 1,
+    "FG-IR-25-151": 1,
+    "FG-IR-25-173": 1,
+    "FG-IR-25-198": 1,
+    "FG-IR-25-254": 2,
+    "FG-IR-25-358": 1,
+    "FG-IR-25-362": 1,
+    "FG-IR-25-378": 1,
+    "FG-IR-25-384": 1,
+    "FG-IR-25-448": 1,
+    "FG-IR-25-513": 1,
+    "FG-IR-25-545": 1,
+    "FG-IR-25-632": 1,
+    "FG-IR-25-634": 1,
+    "FG-IR-25-647": 1,
+    "FG-IR-25-653": 1,
+    "FG-IR-25-667": 1,
+    "FG-IR-25-756": 1,
+    "FG-IR-25-795": 1,
+    "FG-IR-25-843": 1,
+    "FG-IR-25-910": 1,
+    "FG-IR-25-934": 1,
+    "FG-IR-25-945": 1,
+    "FG-IR-25-984": 1,
+    "FG-IR-26-060": 3,
+    "FG-IR-26-078": 2,
+    "FG-IR-26-079": 2,
+    "FG-IR-26-080": 1,
+    "FG-IR-26-081": 2,
+    "FG-IR-26-082": 1,
+    "FG-IR-26-088": 1,
+    "FG-IR-26-089": 1,
+    "FG-IR-26-090": 2,
+    "FG-IR-26-092": 2,
+    "FG-IR-26-093": 1,
+    "FG-IR-26-094": 1,
+    "FG-IR-26-095": 1,
+    "FG-IR-26-097": 1,
+    "FG-IR-26-108": 1,
+    "FG-IR-26-111": 2,
+    "FG-IR-26-120": 2,
+    "FG-IR-26-122": 1,
+    "FG-IR-26-123": 1,
+    "FG-IR-26-125": 1,
+    "FG-IR-26-132": 1,
+    "FG-IR-26-137": 2,
+    "FG-IR-26-154": 1,
+    "FortiAnalyzerConnection": 1,
+    "FortiApAuthorized": 2,
+    "FortiApUtmSsid": 2,
+    "FortiApVersions": 2,
+    "FortiCareRegistered": 2,
+    "FortiClientVulnerabilities": 1,
+    "FortiExtenderAuthorized": 1,
+    "FortiExtenderPdnInterfaceMisconfiguration": 1,
+    "FortiSandboxConfigured": 2,
+    "FortiSandboxConnection": 1,
+    "FortiSwitchIslLockdown": 1,
+    "FortiSwitchQuarantineBouncePort": 1,
+    "ForticareMultipleAccounts": 1,
+    "FortigateIdentification": 1,
+    "FortiguardAntiSpam": 1,
+    "FortiguardAntiVirus": 1,
+    "FortiguardFiltering": 1,
+    "FortiguardFirmwareGeneralUpdates": 1,
+    "FortiguardIndustrialDb": 1,
+    "FortiguardIoc": 1,
+    "FortiguardIotDetection": 1,
+    "FortiguardIotVulnerability": 1,
+    "FortiguardIps": 1,
+    "FortiguardOutbreakPrevention": 1,
+    "FortiguardSecurityRating": 1,
+    "FortiguardWebFiltering": 1,
+    "FortilinkCapacity": 1,
+    "IdleTimeout": 2,
+    "InterfaceClassification": 1,
+    "IpPoolExhaust": 1,
+    "LanSegmentServers": 1,
+    "LdapSecureProtocolCheck": 1,
+    "LdapServerIdentityCheck": 1,
+    "LocalLogDisk": 1,
+    "LoggingReporting": 1,
+    "LoginAttempts": 2,
+    "MclagTier1Candidate": 1,
+    "MclagTierPlusCandidate": 1,
+    "NtpServers": 1,
+    "PhaseOneInterfaceDiffieHellmanGroup": 1,
+    "PhaseOneInterfaceIke": 1,
+    "PhaseOneInterfaceProposal": 1,
+    "PhaseTwoInterfaceDiffieHellmanGroup": 1,
+    "PhaseTwoInterfaceProposal": 1,
+    "PolicyActiveInterface": 1,
+    "PolicyExplicitInterfaces": 1,
+    "PolicyInspectionMode": 1,
+    "PolicyNoInspectionWithUtm": 1,
+    "PolicyRecentlyUnused": 1,
+    "PolicyStatsOversize": 1,
+    "PolicyUniqueNames": 1,
+    "RogueApDetection": 1,
+    "SecureWirelessConnections": 1,
+    "SnmpPolling": 1,
+    "SsidInsecureProtocols": 1,
+    "SystemUptime": 1,
+    "ThirdPartyRouter": 1,
+    "TrustedHosts": 1,
+    "TrustedListUsed": 1,
+    "TwoFactorAuthentication": 1,
+    "TwoFactorAuthenticationVpnUsers": 1,
+    "UnresolvedDynamicSdn": 1,
+    "UnresolvedFqdn": 1,
+    "UnsecureProtocolHttp": 4,
+    "UnsecureProtocolTelnet": 4,
+    "UsbAutoConfig": 1,
+    "ValidCertificateHttpServer": 1,
+    "ValidCertificateIpsec": 1,
+    "ValidCertificateSslvpn": 1,
+    "VipOverlap": 1,
+    "VlanManagement": 1,
+    "VlanMissingPolicies": 1,
+    "WanManagementAccess": 1,
+    "WidsSignatures": 1
+   },
+   "present_in_runs": {
+    "ActivateFortiCloudService": 1.0,
+    "AdminPasswordPolicy": 1.0,
+    "AdminPasswordSecurity": 1.0,
+    "AdminSportIkeTcpPortConfict": 1.0,
+    "AuditLogCapacity": 1.0,
+    "AuditLogSettings": 1.0,
+    "AuditManagementInterfaces": 1.0,
+    "AutomaticFortiguardUpdate": 1.0,
+    "CertificateExpiry": 1.0,
+    "ClassifyRogueAccesspoints": 1.0,
+    "DefaultPortHttps": 1.0,
+    "DefaultPortSsh": 1.0,
+    "DetectBotnetConnections": 1.0,
+    "DeviceDiscovery": 1.0,
+    "DeviceEndOfSupport": 1.0,
+    "DisableUsernameSensitivity": 1.0,
+    "DisabledMatchVip": 1.0,
+    "DnsHelper": 1.0,
+    "DuplicateFirewallObjects": 1.0,
+    "EndpointRegistration": 1.0,
+    "ExpiredApiKeys": 1.0,
+    "ExpiredAutomationTriggerSchedule": 1.0,
+    "ExpiredPolicies": 1.0,
+    "ExpiredSchedule": 1.0,
+    "FG-IR-20-105": 1.0,
+    "FG-IR-20-220": 1.0,
+    "FG-IR-21-033": 1.0,
+    "FG-IR-21-046": 1.0,
+    "FG-IR-21-071": 1.0,
+    "FG-IR-21-173": 1.0,
+    "FG-IR-22-038": 1.0,
+    "FG-IR-22-070": 1.0,
+    "FG-IR-22-111": 1.0,
+    "FG-IR-22-118": 1.0,
+    "FG-IR-22-120": 1.0,
+    "FG-IR-22-131": 1.0,
+    "FG-IR-22-133": 1.0,
+    "FG-IR-22-136": 1.0,
+    "FG-IR-22-140": 1.0,
+    "FG-IR-22-142": 1.0,
+    "FG-IR-22-146": 0.94,
+    "FG-IR-22-151": 1.0,
+    "FG-IR-22-163": 0.94,
+    "FG-IR-22-164": 0.89,
+    "FG-IR-22-167": 0.89,
+    "FG-IR-22-186": 1.0,
+    "FG-IR-22-187": 1.0,
+    "FG-IR-22-237": 1.0,
+    "FG-IR-22-244": 1.0,
+    "FG-IR-22-245": 0.94,
+    "FG-IR-22-247": 1.0,
+    "FG-IR-22-250": 0.94,
+    "FG-IR-22-251": 0.94,
+    "FG-IR-22-254": 0.94,
+    "FG-IR-22-274": 0.94,
+    "FG-IR-22-283": 0.94,
+    "FG-IR-22-326": 0.94,
+    "FG-IR-22-345": 1.0,
+    "FG-IR-22-348": 0.94,
+    "FG-IR-22-375": 0.94,
+    "FG-IR-22-428": 1.0,
+    "FG-IR-22-460": 0.94,
+    "FG-IR-22-465": 0.94,
+    "FG-IR-22-501": 1.0,
+    "FG-IR-23-001": 1.0,
+    "FG-IR-23-068": 0.94,
+    "FG-IR-23-103": 0.06,
+    "FG-IR-23-115": 0.94,
+    "FG-IR-23-169": 0.06,
+    "FG-IR-23-177": 0.06,
+    "FG-IR-23-191": 1.0,
+    "FG-IR-23-204": 0.06,
+    "FG-IR-23-219": 1.0,
+    "FG-IR-23-220": 1.0,
+    "FG-IR-23-256": 1.0,
+    "FG-IR-23-258": 0.94,
+    "FG-IR-23-260": 0.94,
+    "FG-IR-23-267": 0.06,
+    "FG-IR-23-282": 1.0,
+    "FG-IR-23-396": 0.06,
+    "FG-IR-23-419": 0.06,
+    "FG-IR-23-472": 0.06,
+    "FG-IR-23-474": 1.0,
+    "FG-IR-23-490": 1.0,
+    "FG-IR-23-494": 1.0,
+    "FG-IR-24-010": 1.0,
+    "FG-IR-24-029": 0.06,
+    "FG-IR-24-046": 1.0,
+    "FG-IR-24-053": 1.0,
+    "FG-IR-24-091": 0.06,
+    "FG-IR-24-094": 1.0,
+    "FG-IR-24-098": 0.06,
+    "FG-IR-24-099": 0.06,
+    "FG-IR-24-106": 0.06,
+    "FG-IR-24-116": 0.06,
+    "FG-IR-24-124": 0.06,
+    "FG-IR-24-127": 0.06,
+    "FG-IR-24-130": 0.06,
+    "FG-IR-24-133": 0.94,
+    "FG-IR-24-143": 0.06,
+    "FG-IR-24-147": 0.06,
+    "FG-IR-24-165": 0.06,
+    "FG-IR-24-180": 1.0,
+    "FG-IR-24-184": 1.0,
+    "FG-IR-24-221": 1.0,
+    "FG-IR-24-228": 1.0,
+    "FG-IR-24-239": 0.06,
+    "FG-IR-24-250": 1.0,
+    "FG-IR-24-255": 1.0,
+    "FG-IR-24-257": 1.0,
+    "FG-IR-24-259": 1.0,
+    "FG-IR-24-266": 1.0,
+    "FG-IR-24-282": 1.0,
+    "FG-IR-24-287": 1.0,
+    "FG-IR-24-302": 0.94,
+    "FG-IR-24-304": 1.0,
+    "FG-IR-24-309": 1.0,
+    "FG-IR-24-325": 0.89,
+    "FG-IR-24-326": 0.94,
+    "FG-IR-24-331": 1.0,
+    "FG-IR-24-339": 0.94,
+    "FG-IR-24-361": 1.0,
+    "FG-IR-24-364": 1.0,
+    "FG-IR-24-372": 1.0,
+    "FG-IR-24-373": 1.0,
+    "FG-IR-24-422": 1.0,
+    "FG-IR-24-423": 1.0,
+    "FG-IR-24-425": 1.0,
+    "FG-IR-24-435": 0.94,
+    "FG-IR-24-437": 1.0,
+    "FG-IR-24-438": 1.0,
+    "FG-IR-24-439": 1.0,
+    "FG-IR-24-442": 1.0,
+    "FG-IR-24-452": 0.94,
+    "FG-IR-24-453": 1.0,
+    "FG-IR-24-457": 0.94,
+    "FG-IR-24-463": 1.0,
+    "FG-IR-24-465": 1.0,
+    "FG-IR-24-472": 1.0,
+    "FG-IR-24-473": 1.0,
+    "FG-IR-24-474": 0.94,
+    "FG-IR-24-487": 1.0,
+    "FG-IR-24-511": 1.0,
+    "FG-IR-24-542": 0.94,
+    "FG-IR-24-544": 1.0,
+    "FG-IR-24-546": 1.0,
+    "FG-IR-25-006": 1.0,
+    "FG-IR-25-026": 1.0,
+    "FG-IR-25-084": 0.94,
+    "FG-IR-25-1052": 1.0,
+    "FG-IR-25-122": 1.0,
+    "FG-IR-25-150": 1.0,
+    "FG-IR-25-151": 0.89,
+    "FG-IR-25-173": 1.0,
+    "FG-IR-25-198": 1.0,
+    "FG-IR-25-254": 1.0,
+    "FG-IR-25-358": 0.94,
+    "FG-IR-25-362": 1.0,
+    "FG-IR-25-378": 1.0,
+    "FG-IR-25-384": 0.94,
+    "FG-IR-25-448": 1.0,
+    "FG-IR-25-513": 1.0,
+    "FG-IR-25-545": 1.0,
+    "FG-IR-25-632": 1.0,
+    "FG-IR-25-634": 1.0,
+    "FG-IR-25-647": 1.0,
+    "FG-IR-25-653": 0.94,
+    "FG-IR-25-667": 1.0,
+    "FG-IR-25-756": 1.0,
+    "FG-IR-25-795": 1.0,
+    "FG-IR-25-843": 0.94,
+    "FG-IR-25-910": 1.0,
+    "FG-IR-25-934": 0.94,
+    "FG-IR-25-945": 0.89,
+    "FG-IR-25-984": 1.0,
+    "FG-IR-26-060": 1.0,
+    "FG-IR-26-078": 1.0,
+    "FG-IR-26-079": 1.0,
+    "FG-IR-26-080": 1.0,
+    "FG-IR-26-081": 1.0,
+    "FG-IR-26-082": 1.0,
+    "FG-IR-26-088": 0.94,
+    "FG-IR-26-089": 0.94,
+    "FG-IR-26-090": 1.0,
+    "FG-IR-26-092": 1.0,
+    "FG-IR-26-093": 1.0,
+    "FG-IR-26-094": 1.0,
+    "FG-IR-26-095": 1.0,
+    "FG-IR-26-097": 1.0,
+    "FG-IR-26-108": 1.0,
+    "FG-IR-26-111": 1.0,
+    "FG-IR-26-120": 1.0,
+    "FG-IR-26-122": 1.0,
+    "FG-IR-26-123": 0.94,
+    "FG-IR-26-125": 1.0,
+    "FG-IR-26-132": 1.0,
+    "FG-IR-26-137": 1.0,
+    "FG-IR-26-154": 0.94,
+    "FortiAnalyzerConnection": 1.0,
+    "FortiApAuthorized": 0.06,
+    "FortiApUtmSsid": 0.06,
+    "FortiApVersions": 0.06,
+    "FortiCareRegistered": 1.0,
+    "FortiClientVulnerabilities": 1.0,
+    "FortiExtenderAuthorized": 1.0,
+    "FortiExtenderPdnInterfaceMisconfiguration": 1.0,
+    "FortiSandboxConfigured": 1.0,
+    "FortiSandboxConnection": 1.0,
+    "FortiSwitchIslLockdown": 1.0,
+    "FortiSwitchQuarantineBouncePort": 1.0,
+    "ForticareMultipleAccounts": 1.0,
+    "FortigateIdentification": 1.0,
+    "FortiguardAntiSpam": 1.0,
+    "FortiguardAntiVirus": 1.0,
+    "FortiguardFiltering": 1.0,
+    "FortiguardFirmwareGeneralUpdates": 1.0,
+    "FortiguardIndustrialDb": 1.0,
+    "FortiguardIoc": 1.0,
+    "FortiguardIotDetection": 1.0,
+    "FortiguardIotVulnerability": 1.0,
+    "FortiguardIps": 1.0,
+    "FortiguardOutbreakPrevention": 1.0,
+    "FortiguardSecurityRating": 1.0,
+    "FortiguardWebFiltering": 1.0,
+    "FortilinkCapacity": 1.0,
+    "IdleTimeout": 1.0,
+    "InterfaceClassification": 1.0,
+    "IpPoolExhaust": 1.0,
+    "LanSegmentServers": 1.0,
+    "LdapSecureProtocolCheck": 1.0,
+    "LdapServerIdentityCheck": 1.0,
+    "LocalLogDisk": 1.0,
+    "LoggingReporting": 1.0,
+    "LoginAttempts": 1.0,
+    "MclagTier1Candidate": 1.0,
+    "MclagTierPlusCandidate": 1.0,
+    "NtpServers": 1.0,
+    "PhaseOneInterfaceDiffieHellmanGroup": 1.0,
+    "PhaseOneInterfaceIke": 1.0,
+    "PhaseOneInterfaceProposal": 1.0,
+    "PhaseTwoInterfaceDiffieHellmanGroup": 1.0,
+    "PhaseTwoInterfaceProposal": 1.0,
+    "PolicyActiveInterface": 1.0,
+    "PolicyExplicitInterfaces": 1.0,
+    "PolicyInspectionMode": 1.0,
+    "PolicyNoInspectionWithUtm": 1.0,
+    "PolicyRecentlyUnused": 0.06,
+    "PolicyStatsOversize": 1.0,
+    "PolicyUniqueNames": 1.0,
+    "RogueApDetection": 1.0,
+    "SecureWirelessConnections": 1.0,
+    "SnmpPolling": 1.0,
+    "SsidInsecureProtocols": 1.0,
+    "SystemUptime": 1.0,
+    "ThirdPartyRouter": 1.0,
+    "TrustedHosts": 1.0,
+    "TrustedListUsed": 1.0,
+    "TwoFactorAuthentication": 1.0,
+    "TwoFactorAuthenticationVpnUsers": 1.0,
+    "UnresolvedDynamicSdn": 1.0,
+    "UnresolvedFqdn": 1.0,
+    "UnsecureProtocolHttp": 1.0,
+    "UnsecureProtocolTelnet": 1.0,
+    "UsbAutoConfig": 1.0,
+    "ValidCertificateHttpServer": 1.0,
+    "ValidCertificateIpsec": 1.0,
+    "ValidCertificateSslvpn": 1.0,
+    "VipOverlap": 1.0,
+    "VlanManagement": 1.0,
+    "VlanMissingPolicies": 1.0,
+    "WanManagementAccess": 1.0,
+    "WidsSignatures": 1.0
+   },
+   "partial_run_groups": [
+    {
+     "checks": [
+      "FortiAnalyzerConnection"
+     ],
+     "seen": 4
+    },
+    {
+     "checks": [
+      "AdminSportIkeTcpPortConfict",
+      "DefaultPortHttps",
+      "DefaultPortSsh",
+      "DetectBotnetConnections",
+      "DeviceDiscovery",
+      "EndpointRegistration",
+      "FortigateIdentification",
+      "IdleTimeout",
+      "InterfaceClassification",
+      "LanSegmentServers",
+      "LoginAttempts",
+      "SecureWirelessConnections",
+      "SsidInsecureProtocols",
+      "UnsecureProtocolHttp",
+      "UnsecureProtocolTelnet",
+      "ValidCertificateHttpServer",
+      "VlanManagement",
+      "VlanMissingPolicies",
+      "WanManagementAccess"
+     ],
+     "seen": 2
+    },
+    {
+     "checks": [
+      "AdminSportIkeTcpPortConfict",
+      "DetectBotnetConnections",
+      "DeviceDiscovery",
+      "EndpointRegistration",
+      "InterfaceClassification",
+      "LanSegmentServers",
+      "SecureWirelessConnections",
+      "SsidInsecureProtocols",
+      "UnsecureProtocolHttp",
+      "UnsecureProtocolTelnet",
+      "VlanManagement",
+      "VlanMissingPolicies",
+      "WanManagementAccess"
+     ],
+     "seen": 1
+    }
+   ]
+  }
+ }
+}

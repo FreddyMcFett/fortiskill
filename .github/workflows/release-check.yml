@@ -1,0 +1,76 @@
+name: Release check
+
+# main is the plugin's release channel (every merge reaches all users via
+# auto-update) and the repo is public. Every PR and every push to main must pass
+# both jobs; make them required status checks in the branch ruleset for main.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited, ready_for_review]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-check-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  compliance:
+    name: Compliance scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0 # every commit of the PR is scanned, not only the final tree
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: "3.12"
+      - name: Scanner self-test
+        run: python3 scripts/compliance_scan.py --self-test
+      - name: Scan tree, commits and PR text
+        env:
+          EVENT: ${{ github.event_name }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD: ${{ github.event.pull_request.head.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
+          PUSH_AFTER: ${{ github.sha }}
+          # PR title/body go through env vars, never inline into the script.
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+          # Optional repo secret: customer/project names, one per line (empty for fork PRs).
+          COMPLIANCE_DENYLIST: ${{ secrets.COMPLIANCE_DENYLIST }}
+        run: |
+          args=()
+          if [ "$EVENT" = pull_request ]; then
+            args+=(--commits "$PR_BASE..$PR_HEAD" --env-text PR_TITLE --env-text PR_BODY)
+          elif [ "$EVENT" = push ] && [ -n "${PUSH_BEFORE//0/}" ] && git cat-file -e "$PUSH_BEFORE^{commit}" 2>/dev/null; then
+            args+=(--commits "$PUSH_BEFORE..$PUSH_AFTER")
+          fi
+          python3 scripts/compliance_scan.py "${args[@]}"
+
+  validate:
+    name: Plugin validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install pyyaml openpyxl
+      - name: Validate marketplace, plugin and skill frontmatter
+        run: python3 scripts/validate_plugin.py
+      - name: Smoke-test scripts
+        run: |
+          for f in skills/*/scripts/*.py scripts/compliance_scan.py scripts/sanitize_office.py; do
+            case "$f" in */render_slides.py) continue ;; esac
+            echo "::group::$f --help"
+            python3 "$f" --help
+            echo "::endgroup::"
+          done

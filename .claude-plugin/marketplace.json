@@ -1,0 +1,17 @@
+{
+  "name": "fortiskill",
+  "owner": {
+    "name": "FreddyMcFett"
+  },
+  "metadata": {
+    "description": "Fortinet presales skills for Claude (claude.ai, Claude Desktop, Claude Code)."
+  },
+  "plugins": [
+    {
+      "name": "fortiskill",
+      "source": "./",
+      "description": "Fortinet engineering, BOM, PowerPoint, KB article and FortiAnalyzer demo-log skills.",
+      "category": "productivity"
+    }
+  ]
+}

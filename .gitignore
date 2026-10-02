@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+
+# Office temp files
+~$*.pptx
+~$*.xlsx
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Claude Code local/personal settings (per-session permission cache)
+.claude/settings.local.json
+
+# Compliance: local customer/project denylist (never commit, see README)
+.compliance/denylist.local.txt
+
+# Material that must never reach this public repo
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.lic
+*.pcap
+*.pcapng
+*.har

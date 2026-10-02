@@ -1,0 +1,4 @@
+#!/bin/sh
+# Compliance scan of the staged changes - this repo is public.
+# Enable once per clone: git config core.hooksPath .githooks
+exec python3 "$(git rev-parse --show-toplevel)/scripts/compliance_scan.py" --staged
